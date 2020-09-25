@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.michishirube.R
 
 
-class SpotRegistFragment : Fragment() {
+class SpotRegisterFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
