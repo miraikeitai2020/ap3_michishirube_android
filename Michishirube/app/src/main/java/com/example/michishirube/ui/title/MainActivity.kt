@@ -1,7 +1,8 @@
-package com.example.michishirube
+package com.example.michishirube.ui.title
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.michishirube.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
