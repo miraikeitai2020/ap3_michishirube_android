@@ -1,4 +1,4 @@
-package com.example.michishirube.ui.naviEvaluation
+package com.example.michishirube.ui.spotRegister
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,9 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.michishirube.R
 
-class NaviEvaluationFragment : Fragment() {
+
+class SpotRegisterFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_navi_evaluation, container, false)
+        val view = inflater.inflate(R.layout.fragment_spot_register, container, false)
         return view
     }
 
