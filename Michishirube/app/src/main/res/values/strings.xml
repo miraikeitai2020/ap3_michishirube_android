@@ -1,4 +1,36 @@
 <resources>
     <string name="app_name">未知しるべ</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Title画面 -->
+    <string name="bt_navigation">感情に沿ってナビゲーション</string>
+    <string name="bt_spotList">スポット一覧</string>
+
+    <!-- NaviEmotionSelect画面 -->
+    <string name="tv_emotion_select_desc">今の感情を教えてください</string>
+
+    <!-- NaviTimeSelect画面 -->
+    <string name="tv_time_select_desc">所要時間を設定してください</string>
+    <string name="bt_time_decision">決定</string>
+
+    <!-- NaviDestination画面 -->
+    <string name="tv_destination_desc">今のあなたの感情から目的地を推薦します</string>
+    <string name="et_destination"></string>
+    <string name="bt_go">ここにいく</string>
+
+    <!-- NaviNavigating画面 -->
+    <string name="tv_navigating">案内中</string>
+
+    <!-- NaviEvaluation画面 -->
+    <string name="tv_good">気に入った</string>
+    <string name="tv_bad">気に入らなかった</string>
+
+    <!-- SpotList画面 -->
+
+    <!-- SpotRegister画面 -->
+    <string name="tv_spot">場所名</string>
+    <string name="tv_emotion">感情</string>
+    <string name="tv_explanation">説明</string>
+    
+
 </resources>
