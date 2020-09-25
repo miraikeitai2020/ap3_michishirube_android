@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/titleFragment"
+    >
+
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.example.michishirube.ui.title.TitleFragment"
+        android:label="fragment_title"
+        tools:layout="@layout/fragment_title"
+        >
+        <action
+            android:id="@+id/action_title_to_naviEmotionSelect"
+            app:destination="@+id/naviEmotionSelectFragment"
+            />
+
+        <action
+            android:id="@+id/action_title_to_spotList"
+            app:destination="@+id/spotListFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/naviEmotionSelectFragment"
+        android:name="com.example.michishirube.ui.naviEmotionSelect.NaviEmotionSelectFragment"
+        android:label="fragment_navi_emotion_select"
+        tools:layout="@layout/fragment_navi_emotion_select"
+        >
+
+        <action
+        android:id="@+id/action_naviEmotionSelect_to_naviTimeSelect"
+        app:destination="@+id/naviTimeSelectFragment"
+        />
+    </fragment>
+
+    <fragment
+        android:id="@+id/naviTimeSelectFragment"
+        android:name="com.example.michishirube.ui.naviTimeSelect.NaviTimeSelectFragment"
+        android:label="fragment_navi_time_select"
+        tools:layout="@layout/fragment_navi_time_select"
+        >
+        <action
+            android:id="@+id/action_naviTimeSelect_to_naviDestination"
+            app:destination="@+id/naviDestionationFragment"
+            />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/naviDestionationFragment"
+        android:name="com.example.michishirube.ui.naviDestination.NaviDestinationFragment"
+        android:label="fragment_navi_destination"
+        tools:layout="@layout/fragment_navi_destination"
+        >
+        <action
+            android:id="@+id/action_naviDestination_to_naviNavigating"
+            app:destination="@+id/naviNavigatingFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/naviNavigatingFragment"
+        android:name="com.example.michishirube.ui.naviNavigating.NaviNavigatingFragment"
+        android:label="fragment_navi_navigating"
+        tools:layout="@layout/fragment_navi_navigating"
+        >
+        <action
+            android:id="@+id/action_naviNavigating_to_naviEvaluation"
+            app:destination="@+id/naviEvaluationFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/naviEvaluationFragment"
+        android:name="com.example.michishirube.ui.naviEvaluation.NaviEvaluationFragment"
+        android:label="fragment_navi_evaluation"
+        tools:layout="@layout/fragment_navi_evaluation"
+        >
+    </fragment>
+
+    <fragment
+        android:id="@+id/spotListFragment"
+        android:name="com.example.michishirube.ui.spotList.SpotListFragment"
+        android:label="fragment_spot_list"
+        tools:layout="@layout/fragment_spot_list"
+        >
+        <action
+            android:id="@+id/action_spotList_to_spotRegister"
+            app:destination="@+id/spotRegisterFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/spotRegisterFragment"
+        android:name="com.example.michishirube.ui.spotRegister.SpotRegisterFragment"
+        android:label="fragment_spot_register"
+        tools:layout="@layout/fragment_spot_register"
+        >
+
+    </fragment>
+
+</navigation>
