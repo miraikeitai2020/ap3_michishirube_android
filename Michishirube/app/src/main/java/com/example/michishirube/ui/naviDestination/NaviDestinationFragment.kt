@@ -5,19 +5,36 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.michishirube.R
+import com.example.michishirube.databinding.FragmentNaviDestinationBinding
 import kotlinx.android.synthetic.main.fragment_navi_destination.view.*
 import kotlinx.android.synthetic.main.fragment_navi_emotion_select.view.*
 
 
 class NaviDestinationFragment : Fragment() {
+    private lateinit var binding: FragmentNaviDestinationBinding
+    private val viewModel: NaviDestinationViewModel by viewModels()
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_navi_destination, container, false)
-        view.btGo.setOnClickListener{
+        binding = FragmentNaviDestinationBinding.inflate(inflater, container, false)
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.btGo.setOnClickListener{
             findNavController().navigate(R.id.action_naviDestination_to_naviNavigating)
         }
-        return view
+
+//        binding.btReload.setOnClickListener {
+//            //更新ボタン
+//        }
+
+
     }
 
 }
