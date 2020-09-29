@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_navi_emotion_select.view.*
 class NaviEmotionSelectFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_navi_emotion_select, container, false)
-        view.ibEmotion.setOnClickListener{
+        view.btHappy.setOnClickListener{
             findNavController().navigate(R.id.action_naviEmotionSelect_to_naviTimeSelect)
         }
         return view

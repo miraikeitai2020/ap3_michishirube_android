@@ -2,6 +2,8 @@
     <string name="app_name">未知しるべ</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="bt_back">←</string>
+
     <!-- Title画面 -->
     <string name="bt_navigation">感情に沿ってナビゲーション</string>
     <string name="bt_spotList">スポット一覧</string>
