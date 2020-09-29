@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_navi_navigating.view.*
 class NaviNavigatingFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_navi_navigating, container, false)
-        view.btNavigating.setOnClickListener{
+        view.ibNavigating.setOnClickListener{
             findNavController().navigate(R.id.action_naviNavigating_to_naviEvaluation)
         }
         return view
