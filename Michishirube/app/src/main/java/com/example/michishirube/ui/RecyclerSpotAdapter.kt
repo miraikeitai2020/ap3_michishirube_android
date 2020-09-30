@@ -21,6 +21,6 @@ class RecyclerSpotAdapter(): RecyclerView.Adapter<RecyclerSpotAdapter.RecyclerVi
     }
 
     override fun getItemCount(): Int {
-        return 5//Listの表示される数がここで決まる〜
+        return 7//Listの表示される数がここで決まる〜
     }
 }
