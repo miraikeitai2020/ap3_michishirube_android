@@ -26,6 +26,7 @@ class NaviDestinationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //ここにいくボタンを押下
         binding.btGo.setOnClickListener{
             findNavController().navigate(R.id.action_naviDestination_to_naviNavigating)
         }

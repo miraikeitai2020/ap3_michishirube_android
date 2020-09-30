@@ -38,7 +38,7 @@ class NaviTimeSelectFragment : Fragment() {
 
         //画面遷移　決定ボタンタップしたら．　この時の時間のあれってViewModel関与しなくていいの？
         binding.btTimeDecision.setOnClickListener {
-            //所要時間の計算する〜　ここら辺MVVMにするとわからないから誰かに聞きたい
+            //TimePickerの値変えるやつここに書いて，その中でその変数をViewModelの関数に渡して所要時間を計算し，画面遷移の値に代入かなぁ〜
             findNavController().navigate(R.id.action_naviTimeSelect_to_naviDestination)
         }
     }
