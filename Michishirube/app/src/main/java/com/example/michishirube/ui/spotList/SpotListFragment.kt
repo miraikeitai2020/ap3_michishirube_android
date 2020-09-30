@@ -7,7 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.michishirube.R
+import com.example.michishirube.databinding.FragmentSpotListBinding
+import com.example.michishirube.ui.RecyclerSpotAdapter
 import kotlinx.android.synthetic.main.fragment_navi_emotion_select.view.*
 import kotlinx.android.synthetic.main.fragment_spot_list.view.*
 
@@ -15,15 +18,26 @@ import kotlinx.android.synthetic.main.fragment_spot_list.view.*
 class SpotListFragment : Fragment() {
 
     private val spotListViewModel: SpotListViewModel by viewModels()
+    private lateinit var binding: FragmentSpotListBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_spot_list, container, false)
+        binding = FragmentSpotListBinding.inflate(inflater, container, false)
 
+        binding.lvSpot.adapter = RecyclerSpotAdapter()
 
-        view.fabAddSpot.setOnClickListener{
+        val layout = LinearLayoutManager(context)
+        binding.lvSpot.layoutManager = layout
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.fabAddSpot.setOnClickListener{
             findNavController().navigate(R.id.action_spotList_to_spotRegister)
         }
-        return view
+
     }
 
 }

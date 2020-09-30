@@ -1,77 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.naviDestination.NaviDestinationFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <Button
-        android:id="@+id/btBack_desc"
-        android:layout_width="62dp"
-        android:layout_height="58dp"
-        android:text="@string/bt_back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.065"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+    <data>
 
-    <TextView
-        android:id="@+id/tvDesc_title"
-        android:layout_width="240dp"
-        android:layout_height="75dp"
-        android:text="@string/tv_destination_desc"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.198" />
+        <import type="android.view.View" />
 
-    <TextView
-        android:id="@+id/tvDesc"
-        android:layout_width="293dp"
-        android:layout_height="164dp"
-        android:background="#33FFFFFF"
-        android:gravity="center"
-        android:text="推薦地"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDesc_title"
-        app:layout_constraintVertical_bias="0.234" />
+        <variable
+            name="viewModel"
+            type="com.example.michishirube.ui.naviDestination.NaviDestinationViewModel" />
+    </data>
 
-    <ImageButton
-        android:id="@+id/btreload"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#00000000"
-        android:src="@drawable/bt_navidestination_reload"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.262"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.83"
-        android:contentDescription="TODO" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.naviDestination.NaviDestinationFragment">
 
-    <ImageButton
-        android:id="@+id/btGo"
-        android:layout_width="wrap_content"
-        android:layout_height="79dp"
-        android:background="#00000000"
-        android:src="@drawable/bt_navidestination_desc"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.166"
-        app:layout_constraintStart_toEndOf="@+id/btreload"
-        app:layout_constraintTop_toBottomOf="@+id/tvDesc"
-        app:layout_constraintVertical_bias="0.505" />
+        <TextView
+            android:id="@+id/tvDesc_title"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:text="@string/tv_destination_desc"
+            android:gravity="center_horizontal"
+            style="@style/HeadingText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvDesc"
+            app:layout_constraintStart_toStartOf="@+id/tvDesc"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.198"
+            />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvDesc"
+            android:layout_width="293dp"
+            android:layout_height="164dp"
+            android:background="#33FFFFFF"
+            android:gravity="center"
+            android:text="推薦地"
+            style="@style/HeadingText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDesc_title"
+            app:layout_constraintVertical_bias="0.234" />
+
+        <ImageButton
+            android:id="@+id/btReload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:contentDescription="TODO"
+            android:src="@drawable/bt_navidestination_reload"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.262"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.83" />
+
+        <ImageButton
+            android:id="@+id/btGo"
+            android:layout_width="wrap_content"
+            android:layout_height="79dp"
+            android:background="#00000000"
+            android:src="@drawable/bt_navidestination_desc"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.166"
+            app:layout_constraintStart_toEndOf="@+id/btReload"
+            app:layout_constraintTop_toBottomOf="@+id/tvDesc"
+            app:layout_constraintVertical_bias="0.505" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

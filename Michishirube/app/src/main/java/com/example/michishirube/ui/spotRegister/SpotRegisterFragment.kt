@@ -6,19 +6,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.example.michishirube.R
 import com.example.michishirube.databinding.FragmentNaviEmotionSelectBinding
+import com.example.michishirube.databinding.FragmentSpotRegisterBinding
 
 
 class SpotRegisterFragment : Fragment() {
-    //private lateinit var spotRegisterViewModel: SpotRegisterViewModel by viewModels()
-    //private lateinit var binding: FragmentNaviEmotionSelectBinding
+    private val spotRegisterViewModel: SpotRegisterViewModel by viewModels()
+    private lateinit var binding: FragmentSpotRegisterBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_spot_register, container, false)
-        //binding = FragmentSpotRegisterBinding.inflate(inflater, container, false)
-        //        return binding.root
-        return view
+        binding = FragmentSpotRegisterBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
     }
 
 }

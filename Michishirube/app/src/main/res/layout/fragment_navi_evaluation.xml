@@ -10,29 +10,26 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="@string/tv_good"
         android:textColor="@color/colorWhite"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/btBad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btGood"
-        app:layout_constraintVertical_bias="0.143" />
+        app:layout_constraintTop_toBottomOf="@+id/btGood" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="@string/tv_bad"
         android:textColor="@color/colorWhite"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btBad"
-        app:layout_constraintVertical_bias="0.114" />
+        app:layout_constraintTop_toBottomOf="@+id/btBad" />
 
     <ImageButton
         android:id="@+id/btGood"
@@ -57,5 +54,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btGood" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

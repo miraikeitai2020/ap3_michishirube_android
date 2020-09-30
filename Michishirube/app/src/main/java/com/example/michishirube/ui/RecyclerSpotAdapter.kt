@@ -12,14 +12,15 @@ class RecyclerSpotAdapter(): RecyclerView.Adapter<RecyclerSpotAdapter.RecyclerVi
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewHolder {
         val layoutInfater = LayoutInflater.from(parent.context)
         val mView = layoutInfater.inflate(R.layout.list_spot,parent,false)//多分ここDataBind使う
-        return RecyclerViewHolder(mView)
+        val holder = RecyclerViewHolder(mView)
+        return holder
     }
 
     override fun onBindViewHolder(holder: RecyclerViewHolder, position: Int) {
-        TODO("Not yet implemented")
+
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return 7//Listの表示される数がここで決まる〜
     }
 }
