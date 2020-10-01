@@ -9,12 +9,13 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.michishirube.R
 import com.example.michishirube.databinding.FragmentNaviEmotionSelectBinding
+import com.example.michishirube.ui.NavigationSharedViewModel
 import kotlinx.android.synthetic.main.fragment_navi_emotion_select.view.*
 
 
 class NaviEmotionSelectFragment : Fragment() {
     private lateinit var binding: FragmentNaviEmotionSelectBinding
-    private val naviEmotionSelectViewModel: NaviEmotionSelectViewModel by viewModels()
+    private val viewModel: NavigationSharedViewModel by viewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentNaviEmotionSelectBinding.inflate(inflater,container,false)
@@ -32,18 +33,22 @@ class NaviEmotionSelectFragment : Fragment() {
         //ショック　３
 
         binding.btHappy.setOnClickListener{
+            //0
             findNavController().navigate(R.id.action_naviEmotionSelect_to_naviTimeSelect)
         }
 
         binding.btNormally.setOnClickListener {
+            //1
             findNavController().navigate(R.id.action_naviEmotionSelect_to_naviTimeSelect)
         }
 
         binding.btAngerAversion.setOnClickListener {
+            //2
             findNavController().navigate(R.id.action_naviEmotionSelect_to_naviTimeSelect)
         }
 
         binding.btShock.setOnClickListener {
+            //3
             findNavController().navigate(R.id.action_naviEmotionSelect_to_naviTimeSelect)
         }
 

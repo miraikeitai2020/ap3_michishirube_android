@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.michishirube.ui.naviDestination.NaviDestinationViewModel" />
+            type="com.example.michishirube.ui.NavigationSharedViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

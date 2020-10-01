@@ -9,13 +9,14 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.michishirube.R
 import com.example.michishirube.databinding.FragmentNaviDestinationBinding
+import com.example.michishirube.ui.NavigationSharedViewModel
 import kotlinx.android.synthetic.main.fragment_navi_destination.view.*
 import kotlinx.android.synthetic.main.fragment_navi_emotion_select.view.*
 
 
 class NaviDestinationFragment : Fragment() {
     private lateinit var binding: FragmentNaviDestinationBinding
-    private val viewModel: NaviDestinationViewModel by viewModels()
+    private val viewModel: NavigationSharedViewModel by viewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentNaviDestinationBinding.inflate(inflater, container, false)

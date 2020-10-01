@@ -1,4 +1,4 @@
-package com.example.michishirube.ui
+package com.example.michishirube.ui.spotList
 
 import android.view.LayoutInflater
 import android.view.View

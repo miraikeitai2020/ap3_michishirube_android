@@ -10,9 +10,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.michishirube.R
 import com.example.michishirube.databinding.FragmentSpotListBinding
-import com.example.michishirube.ui.RecyclerSpotAdapter
-import kotlinx.android.synthetic.main.fragment_navi_emotion_select.view.*
-import kotlinx.android.synthetic.main.fragment_spot_list.view.*
 
 
 class SpotListFragment : Fragment() {

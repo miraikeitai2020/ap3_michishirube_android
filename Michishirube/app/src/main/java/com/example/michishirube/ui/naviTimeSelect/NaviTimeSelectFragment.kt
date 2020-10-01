@@ -10,12 +10,13 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.michishirube.R
 import com.example.michishirube.databinding.FragmentNaviTimeSelectBinding
+import com.example.michishirube.ui.NavigationSharedViewModel
 import kotlinx.android.synthetic.main.fragment_navi_emotion_select.view.*
 import kotlinx.android.synthetic.main.fragment_navi_time_select.view.*
 
 
 class NaviTimeSelectFragment : Fragment() {
-    private val naviTimeSelectViewModel: NaviTimeSelectViewModel by viewModels()
+    private val viewModel: NavigationSharedViewModel by viewModels()
     private lateinit var binding:FragmentNaviTimeSelectBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -24,8 +25,8 @@ class NaviTimeSelectFragment : Fragment() {
 
         //Viewの設定
         binding.timePicker.setIs24HourView(true)
-        binding.timePicker.setHour(naviTimeSelectViewModel.hour)
-        binding.timePicker.setMinute(naviTimeSelectViewModel.minute)
+        binding.timePicker.setHour(viewModel.hour)
+        binding.timePicker.setMinute(viewModel.minute)
 
 
         //return view

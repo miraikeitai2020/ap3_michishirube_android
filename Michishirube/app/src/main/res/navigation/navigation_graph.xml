@@ -79,6 +79,10 @@
         android:label="fragment_navi_evaluation"
         tools:layout="@layout/fragment_navi_evaluation"
         >
+        <action
+            android:id="@+id/action_naviEvaluation_to_title"
+            app:destination="@+id/titleFragment"
+            />
     </fragment>
 
     <fragment
