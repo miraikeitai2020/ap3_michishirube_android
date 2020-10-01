@@ -21,7 +21,7 @@
 
     <!-- NaviDestination画面 -->
     <string name="tv_destination_desc">今のあなたの感情から\n目的地を推薦します</string>
-    <string name="et_destination"></string>
+    <string name="tv_destination">推薦地</string>
     <string name="bt_go">ここにいく</string>
 
     <!-- NaviNavigating画面 -->
