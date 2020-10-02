@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.michishirube.R
 import com.example.michishirube.databinding.FragmentNaviEmotionSelectBinding
@@ -14,7 +14,7 @@ import com.example.michishirube.ui.NavigationSharedViewModel
 
 class NaviEmotionSelectFragment : Fragment() {
     private lateinit var binding: FragmentNaviEmotionSelectBinding
-    private val viewModel: NavigationSharedViewModel by viewModels()
+    private val viewModel: NavigationSharedViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentNaviEmotionSelectBinding.inflate(inflater,container,false)
@@ -31,25 +31,15 @@ class NaviEmotionSelectFragment : Fragment() {
         //怒り・嫌悪　２
         //ショック　３
 
-        binding.btHappy.setOnClickListener{
-            //0
+        fun emotionBtClickListener(emotion: Int) {
+            viewModel.setEmotionType(emotion)
             findNavController().navigate(R.id.action_naviEmotionSelect_to_naviTimeSelect)
         }
 
-        binding.btNormally.setOnClickListener {
-            //1
-            findNavController().navigate(R.id.action_naviEmotionSelect_to_naviTimeSelect)
-        }
-
-        binding.btAngerAversion.setOnClickListener {
-            //2
-            findNavController().navigate(R.id.action_naviEmotionSelect_to_naviTimeSelect)
-        }
-
-        binding.btShock.setOnClickListener {
-            //3
-            findNavController().navigate(R.id.action_naviEmotionSelect_to_naviTimeSelect)
-        }
+        binding.btHappy.setOnClickListener{ emotionBtClickListener(0)}
+        binding.btNormally.setOnClickListener { emotionBtClickListener(1) }
+        binding.btAngerAversion.setOnClickListener { emotionBtClickListener(2) }
+        binding.btShock.setOnClickListener { emotionBtClickListener(3) }
 
     }
 

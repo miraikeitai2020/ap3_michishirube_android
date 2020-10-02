@@ -1,6 +1,5 @@
 package com.example.michishirube.ui
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 
 class NavigationSharedViewModel: ViewModel() {
@@ -19,8 +18,10 @@ class NavigationSharedViewModel: ViewModel() {
     var spotName = ""
 
 
-    //emotionSelectは関数多分使わない
-
+    //emotionSelect
+    fun setEmotionType(selectedEmotion: Int){
+        emotion = selectedEmotion
+    }
 
     //timeSelect 2ndスプリント
     fun setTime(selectedHour:Int, selectedMinute:Int){

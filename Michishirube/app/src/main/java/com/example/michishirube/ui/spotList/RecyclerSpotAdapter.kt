@@ -11,8 +11,8 @@ class RecyclerSpotAdapter(): RecyclerView.Adapter<RecyclerSpotAdapter.RecyclerVi
     class RecyclerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewHolder {
         val layoutInfater = LayoutInflater.from(parent.context)
-        val mView = layoutInfater.inflate(R.layout.list_spot,parent,false)//多分ここDataBind使う
-        val holder = RecyclerViewHolder(mView)
+        val view = layoutInfater.inflate(R.layout.list_spot,parent,false)//多分ここDataBind使う
+        val holder = RecyclerViewHolder(view)
         return holder
     }
 
