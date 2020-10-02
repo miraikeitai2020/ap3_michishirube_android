@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.michishirube.R
 import com.example.michishirube.databinding.FragmentNaviDestinationBinding
@@ -16,7 +16,7 @@ import com.example.michishirube.ui.NavigationSharedViewModel
 
 class NaviDestinationFragment : Fragment(), LocationListener {
     private lateinit var binding: FragmentNaviDestinationBinding
-    private val viewModel: NavigationSharedViewModel by viewModels()
+    private val viewModel: NavigationSharedViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentNaviDestinationBinding.inflate(inflater, container, false)
@@ -36,7 +36,7 @@ class NaviDestinationFragment : Fragment(), LocationListener {
 //        }
     }
 
-    override fun onLocationChanged(p0: Location) {
+    override fun onLocationChanged(location: Location) {
         //
     }
 
