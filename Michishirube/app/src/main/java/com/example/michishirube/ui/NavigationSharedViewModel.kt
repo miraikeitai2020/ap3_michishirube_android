@@ -1,5 +1,6 @@
 package com.example.michishirube.ui
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 
 class NavigationSharedViewModel: ViewModel() {
@@ -9,7 +10,7 @@ class NavigationSharedViewModel: ViewModel() {
 
     //timeSelect
     var hour = 0
-    var minute = 5
+    var minute = 10
     var time = 0//所要時間
 
     //naviDestination
@@ -23,8 +24,10 @@ class NavigationSharedViewModel: ViewModel() {
 
 
     //timeSelect 2ndスプリント
-    fun timeSet(){
-        //hourとminuteより所要時間（time）を計算する
+    fun onTimeSet(selectedHour:Int, selectedMinute:Int){
+        hour = selectedHour
+        minute = selectedMinute
+        time = hour * 60 + minute
     }
 
 

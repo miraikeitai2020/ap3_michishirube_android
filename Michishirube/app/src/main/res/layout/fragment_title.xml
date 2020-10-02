@@ -13,9 +13,11 @@
         android:id="@+id/logoMichishirube"
         android:layout_width="283dp"
         android:layout_height="89dp"
+        android:layout_weight="4"
         android:src="@drawable/logo_michishirube"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="4"/>
+        android:layout_marginTop="24dp"
+        />
 
 
     <ImageButton
