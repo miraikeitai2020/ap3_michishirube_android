@@ -33,7 +33,6 @@ class NavigationSharedViewModel: ViewModel() {
     //naviDestination
     fun getLocationInfo(){
         //画面遷移してきた時点での位置情報を得る〜
-
     }
     fun loadDestination(){//もしかしたらここら辺はちゃんとそれらの（？）ViewModelで書くかも
         //Coroutinesを使用して，Repositryの関数を使って，目的地名を持ってくる
