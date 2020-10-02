@@ -23,105 +23,81 @@
             android:id="@+id/tvSpotName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
             android:text="場所名"
             android:textColor="#ffffff"
-            android:textSize="22sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.127"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvSpotname"
-            app:layout_constraintVertical_bias="0.07" />
+            app:layout_constraintTop_toBottomOf="@+id/ivSpot" />
 
-        <TextView
-            android:id="@+id/tvSpotname"
-            android:layout_width="361dp"
-            android:layout_height="236dp"
-            android:background="#66FFFFFF"
-            android:text="マップ表示エリア？"
-            android:textColor="#ffffff"
-            android:textSize="22sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <ImageView
+            android:id="@+id/ivSpot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/rectangle"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.232" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/etSpotName"
             android:layout_width="298dp"
             android:layout_height="42dp"
+            android:layout_marginTop="16dp"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"
             android:theme="@style/EditTextHint"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvSpotName"
-            app:layout_constraintVertical_bias="0.049" />
+            app:layout_constraintTop_toBottomOf="@+id/tvSpotName" />
 
         <TextView
             android:id="@+id/tvFeel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:layout_marginBottom="28dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
             android:text="感情"
             android:textColor="#ffffff"
-            android:textSize="22sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.119"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.7" />
+            app:layout_constraintTop_toBottomOf="@+id/etSpotName" />
 
         <Spinner
             android:id="@+id/spFeel"
             style="@style/Widget.AppCompat.Spinner.Underlined"
             android:layout_width="298dp"
             android:layout_height="42dp"
+            android:layout_marginTop="16dp"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"
             android:theme="@style/EditTextHint"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvSpotName"
-            app:layout_constraintVertical_bias="0.424" />
+            app:layout_constraintTop_toBottomOf="@+id/tvFeel" />
 
         <TextView
             android:id="@+id/tvExp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:layout_marginBottom="28dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
             android:text="説明"
             android:textColor="#ffffff"
-            android:textSize="22sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.119"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.869" />
+            app:layout_constraintTop_toBottomOf="@+id/spFeel" />
 
         <EditText
             android:id="@+id/etExp"
             android:layout_width="298dp"
             android:layout_height="42dp"
+            android:layout_marginTop="16dp"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"
             android:theme="@style/EditTextHint"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvSpotName"
-            app:layout_constraintVertical_bias="0.816" />
+            app:layout_constraintTop_toBottomOf="@+id/tvExp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
