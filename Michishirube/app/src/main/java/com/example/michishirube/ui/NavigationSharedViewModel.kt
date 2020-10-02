@@ -19,12 +19,11 @@ class NavigationSharedViewModel: ViewModel() {
     var spotName = ""
 
 
-
     //emotionSelectは関数多分使わない
 
 
     //timeSelect 2ndスプリント
-    fun onTimeSet(selectedHour:Int, selectedMinute:Int){
+    fun setTime(selectedHour:Int, selectedMinute:Int){
         hour = selectedHour
         minute = selectedMinute
         time = hour * 60 + minute

@@ -2,7 +2,6 @@ package com.example.michishirube.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.viewModels
 import com.example.michishirube.R
 
 class MainActivity : AppCompatActivity() {
