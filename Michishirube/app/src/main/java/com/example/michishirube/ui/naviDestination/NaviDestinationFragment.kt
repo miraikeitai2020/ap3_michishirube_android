@@ -36,7 +36,7 @@ class NaviDestinationFragment : Fragment(), LocationListener {
 //        }
     }
 
-    override fun onLocationChanged(p0: Location) {
+    override fun onLocationChanged(location: Location) {
         //
     }
 
