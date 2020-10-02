@@ -10,7 +10,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.michishirube.R
 import com.example.michishirube.databinding.FragmentNaviEmotionSelectBinding
 import com.example.michishirube.ui.NavigationSharedViewModel
-import kotlinx.android.synthetic.main.fragment_navi_emotion_select.view.*
 
 
 class NaviEmotionSelectFragment : Fragment() {

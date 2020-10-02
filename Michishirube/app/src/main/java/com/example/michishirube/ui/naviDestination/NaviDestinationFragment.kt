@@ -1,5 +1,7 @@
 package com.example.michishirube.ui.naviDestination
 
+import android.location.Location
+import android.location.LocationListener
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,11 +12,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.michishirube.R
 import com.example.michishirube.databinding.FragmentNaviDestinationBinding
 import com.example.michishirube.ui.NavigationSharedViewModel
-import kotlinx.android.synthetic.main.fragment_navi_destination.view.*
-import kotlinx.android.synthetic.main.fragment_navi_emotion_select.view.*
 
 
-class NaviDestinationFragment : Fragment() {
+class NaviDestinationFragment : Fragment(), LocationListener {
     private lateinit var binding: FragmentNaviDestinationBinding
     private val viewModel: NavigationSharedViewModel by viewModels()
 
@@ -26,7 +26,6 @@ class NaviDestinationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         //ここにいくボタンを押下
         binding.btGo.setOnClickListener{
             findNavController().navigate(R.id.action_naviDestination_to_naviNavigating)
@@ -35,8 +34,10 @@ class NaviDestinationFragment : Fragment() {
 //        binding.btReload.setOnClickListener {
 //            //更新ボタン
 //        }
+    }
 
-
+    override fun onLocationChanged(p0: Location) {
+        //
     }
 
 }
