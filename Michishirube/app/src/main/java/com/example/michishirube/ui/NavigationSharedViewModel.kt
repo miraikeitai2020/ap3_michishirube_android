@@ -10,11 +10,11 @@ class NavigationSharedViewModel: ViewModel() {
     //timeSelect
     var hour = 0
     var minute = 10
-    var time = 0//所要時間
+    var sumMinute = 0//所要時間
 
     //naviDestination
-    var lat = 0.0
-    var lon = 0.0
+    var deviceLatitude = 0.0
+    var deviceLongitude = 0.0
     var spotName = ""
 
 
@@ -27,12 +27,12 @@ class NavigationSharedViewModel: ViewModel() {
     fun setTime(selectedHour:Int, selectedMinute:Int){
         hour = selectedHour
         minute = selectedMinute
-        time = hour * 60 + minute
+        sumMinute = hour * 60 + minute
     }
 
-    fun setLocation(myLat: Double?, myLon: Double?) {
-        lat = myLat!!
-        lon = myLon!!
+    fun setLocation(latitude: Double?, longitude: Double?) {
+        deviceLatitude = latitude!!
+        deviceLongitude = longitude!!
     }
 
     fun loadDestination(){//もしかしたらここら辺はちゃんとそれらの（？）ViewModelで書くかも

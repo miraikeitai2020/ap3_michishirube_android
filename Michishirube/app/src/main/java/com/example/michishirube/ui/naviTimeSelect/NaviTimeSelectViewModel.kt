@@ -35,14 +35,19 @@ class NaviTimeSelectViewModel: ViewModel() {
         fusedLocationClient = FusedLocationProviderClient(context)
         checkRequestPermission(activity,context)
 
+        //初回取得時は，最後の位置情報を利用
         fusedLocationClient.lastLocation.addOnSuccessListener { location: Location? ->
-            setLocation(location?.latitude, location?.longitude)
+            if(location != null){
+                setLocation(location.latitude, location.longitude)
+            }else{
+                //位置情報の取得に失敗しました，的な何かを出したい
+                //UIに関わる部分なのでiOSやデザインと話し合いが必要だと思ったので保留
+            }
         }
 
         locationCallBack = object : LocationCallback(){
             override fun onLocationResult(locationResult: LocationResult?) {
                 super.onLocationResult(locationResult)
-
                 if(locationResult != null){
                     setLocation(locationResult.lastLocation.latitude, locationResult.lastLocation.longitude)
                 }

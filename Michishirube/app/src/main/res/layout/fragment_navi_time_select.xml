@@ -8,7 +8,7 @@
         <import type="android.view.View" />
 
         <variable
-            name="SharedViewModel"
+            name="sharedViewModel"
             type="com.example.michishirube.ui.NavigationSharedViewModel" />
         <variable
             name="viewModel"

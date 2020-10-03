@@ -14,7 +14,7 @@ import com.example.michishirube.ui.NavigationSharedViewModel
 
 class NaviEmotionSelectFragment : Fragment() {
     private lateinit var binding: FragmentNaviEmotionSelectBinding
-    private val viewModel: NavigationSharedViewModel by activityViewModels()
+    private val sharedViewModel: NavigationSharedViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentNaviEmotionSelectBinding.inflate(inflater,container,false)
@@ -32,7 +32,7 @@ class NaviEmotionSelectFragment : Fragment() {
         //ショック　３
 
         fun emotionBtClickListener(emotion: Int) {
-            viewModel.setEmotionType(emotion)
+            sharedViewModel.setEmotionType(emotion)
             findNavController().navigate(R.id.action_naviEmotionSelect_to_naviTimeSelect)
         }
 

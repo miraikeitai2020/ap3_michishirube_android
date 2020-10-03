@@ -14,7 +14,7 @@ import com.example.michishirube.ui.NavigationSharedViewModel
 
 class NaviDestinationFragment : Fragment() {
     private lateinit var binding: FragmentNaviDestinationBinding
-    private val viewModel: NavigationSharedViewModel by activityViewModels()
+    private val shareViewModel: NavigationSharedViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentNaviDestinationBinding.inflate(inflater, container, false)
