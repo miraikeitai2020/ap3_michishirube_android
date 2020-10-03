@@ -24,11 +24,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
             android:text="@string/tv_spot"
             android:textColor="#ffffff"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivSpot" />
+            app:layout_constraintBottom_toTopOf="@+id/etSpotName"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/ivSpot"
@@ -36,6 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:src="@drawable/rectangle"
+            app:layout_constraintBottom_toTopOf="@+id/etSpotName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -44,13 +45,13 @@
             android:id="@+id/etSpotName"
             android:layout_width="298dp"
             android:layout_height="42dp"
-            android:layout_marginTop="16dp"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"
             android:theme="@style/EditTextHint"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvSpotName" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvFeel"
@@ -98,6 +99,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvExp" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etExp"
+            app:srcCompat="@drawable/bt_decision" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
