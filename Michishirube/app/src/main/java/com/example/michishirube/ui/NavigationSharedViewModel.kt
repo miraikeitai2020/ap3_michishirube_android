@@ -23,27 +23,27 @@ class NavigationSharedViewModel: ViewModel() {
         emotion = selectedEmotion
     }
 
-    //timeSelect 2ndスプリント
+    //timeSelect
     fun setTime(selectedHour:Int, selectedMinute:Int){
         hour = selectedHour
         minute = selectedMinute
         time = hour * 60 + minute
     }
 
-
-    //naviDestination
-    fun getLocationInfo(){
-        //画面遷移してきた時点での位置情報を得る〜
+    fun setLocation(myLat: Double?, myLon: Double?) {
+        lat = myLat!!
+        lon = myLon!!
     }
+
     fun loadDestination(){//もしかしたらここら辺はちゃんとそれらの（？）ViewModelで書くかも
         //Coroutinesを使用して，Repositryの関数を使って，目的地名を持ってくる
         //withContextでここの目的地名のテキスト（spotName）に値入れて，Fragmentの方でFragmentの方の目的地名（レイアウトと直結してる方）に値追加かな
     }
 
+    //naviDestination
     fun intentDestination(){
         //「ここにいく」を押したら，緯度経度入れてGoogleMapに遷移するあれをしたいね〜
     }
-
 
     //naviEvaluation 2ndスプリント
     fun postEvaluate(){//もしかしたらここら辺はちゃんとそれらの（？）ViewModelで書くかも
