@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="#00000000"
+        style="@style/ImageStyle"
         android:src="@drawable/bt_navigation"
         android:layout_gravity="center_horizontal"
         />
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:background="#00000000"
+        style="@style/ImageStyle"
         android:src="@drawable/bt_spotlist"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"/>

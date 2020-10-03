@@ -20,4 +20,7 @@
     <style name="EditTextHint">
         <item name="colorControlNormal">@color/colorWhite</item>
     </style>
+    <style name="ImageStyle">
+        <item name="android:background">colorPrimaryDark</item>
+    </style>
 </resources>
