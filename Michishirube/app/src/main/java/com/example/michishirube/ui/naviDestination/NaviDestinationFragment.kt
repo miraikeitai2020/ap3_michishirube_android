@@ -1,7 +1,5 @@
 package com.example.michishirube.ui.naviDestination
 
-import android.location.Location
-import android.location.LocationListener
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,9 +12,9 @@ import com.example.michishirube.databinding.FragmentNaviDestinationBinding
 import com.example.michishirube.ui.NavigationSharedViewModel
 
 
-class NaviDestinationFragment : Fragment(), LocationListener {
+class NaviDestinationFragment : Fragment() {
     private lateinit var binding: FragmentNaviDestinationBinding
-    private val viewModel: NavigationSharedViewModel by activityViewModels()
+    private val shareViewModel: NavigationSharedViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentNaviDestinationBinding.inflate(inflater, container, false)
@@ -36,8 +34,5 @@ class NaviDestinationFragment : Fragment(), LocationListener {
 //        }
     }
 
-    override fun onLocationChanged(location: Location) {
-        //
-    }
 
 }
