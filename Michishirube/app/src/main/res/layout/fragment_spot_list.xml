@@ -25,7 +25,7 @@
             android:layout_margin="24dp"
             android:backgroundTint="@color/colorWhite"
             android:elevation="10dp"
-            android:src="@drawable/fab_add_spot"
+            android:src="@drawable/fab_spotlist_addspot"
             app:fabSize="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

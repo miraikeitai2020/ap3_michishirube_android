@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
-            android:src="@drawable/rectangle"
+            android:src="@drawable/img_frame"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:background="@color/colorPrimaryDark"
-            android:src="@drawable/bt_navidestination_desc"
+            android:src="@drawable/bt_navidestination_go"
             app:layout_constraintBottom_toBottomOf="@+id/btReload"
             app:layout_constraintEnd_toEndOf="@+id/ibNavigating"
             app:layout_constraintTop_toTopOf="@+id/btReload" />
