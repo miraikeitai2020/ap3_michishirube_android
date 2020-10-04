@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.example.michishirube.R
 import com.example.michishirube.databinding.FragmentSpotRegisterBinding
 
 
@@ -20,7 +22,9 @@ class SpotRegisterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        binding.ibDecision.setOnClickListener {
+            findNavController().navigate(R.id.action_spotRegister_to_spotList)
+        }
     }
 
 }
