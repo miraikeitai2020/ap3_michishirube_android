@@ -29,6 +29,8 @@ class NavigationSharedViewModel: ViewModel() {
     //naviDestination
     var deviceLatitude = 0.0
     var deviceLongitude = 0.0
+
+    //spot何たらはgraphQlから値をとってくる
     var spotName = ""
 
     //目的地の緯度経度（とりあえず今は未来大が入っている）
@@ -59,7 +61,7 @@ class NavigationSharedViewModel: ViewModel() {
     fun loadDestination(){//もしかしたらここら辺はちゃんとそれらの（？）ViewModelで書くかも
         //Coroutinesを使用して，Repositryの関数を使って，目的地名を持ってくる
         //withContextでここの目的地名のテキスト（spotName）に値入れて，Fragmentの方でFragmentの方の目的地名（レイアウトと直結してる方）に値追加かな
-        //上にプラスでgraphQLから値を撮ってきてspotLatitude,spotLongitudeに目的地の突っ込む緯度経度
+        //上にプラスでgraphQLから値を撮ってきてspotLatitude,spotLongitudeに目的地の緯度経度をいれる
     }
 
     //naviDestination
