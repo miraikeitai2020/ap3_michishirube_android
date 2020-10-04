@@ -3,8 +3,10 @@ package com.example.michishirube.ui
 import android.Manifest
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
+import android.net.Uri
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.ViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -28,6 +30,10 @@ class NavigationSharedViewModel: ViewModel() {
     var deviceLatitude = 0.0
     var deviceLongitude = 0.0
     var spotName = ""
+
+    //初期値で未来大入れておく〜
+    var spotLatitude = 41.841714
+    var spotLongitude = 140.766817
 
 
     //emotionSelect
@@ -56,8 +62,12 @@ class NavigationSharedViewModel: ViewModel() {
     }
 
     //naviDestination
-    fun intentDestination(){
+    fun intentDestination(): Intent {
         //「ここにいく」を押したら，緯度経度入れてGoogleMapに遷移するあれをしたいね〜
+        val uriStr = "https://www.google.com/maps/dir/?api=1&destination=${spotLatitude},${spotLongitude}"
+        val uri = Uri.parse(uriStr)
+        val intent = Intent(Intent.ACTION_VIEW, uri)
+        return intent
     }
 
     //naviEvaluation 2ndスプリント
