@@ -31,7 +31,7 @@ class NavigationSharedViewModel: ViewModel() {
     var deviceLongitude = 0.0
     var spotName = ""
 
-    //初期値で未来大入れておく〜
+    //目的地の緯度経度（とりあえず今は未来大が入っている）
     var spotLatitude = 41.841714
     var spotLongitude = 140.766817
 
@@ -59,11 +59,11 @@ class NavigationSharedViewModel: ViewModel() {
     fun loadDestination(){//もしかしたらここら辺はちゃんとそれらの（？）ViewModelで書くかも
         //Coroutinesを使用して，Repositryの関数を使って，目的地名を持ってくる
         //withContextでここの目的地名のテキスト（spotName）に値入れて，Fragmentの方でFragmentの方の目的地名（レイアウトと直結してる方）に値追加かな
+        //上にプラスでgraphQLから値を撮ってきてspotLatitude,spotLongitudeに目的地の突っ込む緯度経度
     }
 
     //naviDestination
     fun intentDestination(): Intent {
-        //「ここにいく」を押したら，緯度経度入れてGoogleMapに遷移するあれをしたいね〜
         val uriStr = "https://www.google.com/maps/dir/?api=1&destination=${spotLatitude},${spotLongitude}"
         val uri = Uri.parse(uriStr)
         val intent = Intent(Intent.ACTION_VIEW, uri)
