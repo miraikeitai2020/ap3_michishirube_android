@@ -10,9 +10,6 @@
         <variable
             name="sharedViewModel"
             type="com.example.michishirube.ui.NavigationSharedViewModel" />
-        <variable
-            name="viewModel"
-            type="com.example.michishirube.ui.naviTimeSelect.NaviTimeSelectViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
