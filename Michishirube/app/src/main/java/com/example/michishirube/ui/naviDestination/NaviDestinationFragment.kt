@@ -14,7 +14,7 @@ import com.example.michishirube.ui.NavigationSharedViewModel
 
 class NaviDestinationFragment : Fragment() {
     private lateinit var binding: FragmentNaviDestinationBinding
-    private val shareViewModel: NavigationSharedViewModel by activityViewModels()
+    private val sharedViewModel: NavigationSharedViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentNaviDestinationBinding.inflate(inflater, container, false)
@@ -26,6 +26,7 @@ class NaviDestinationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         //ここにいくボタンを押下
         binding.btGo.setOnClickListener{
+            startActivity(sharedViewModel.intentDestination())
             findNavController().navigate(R.id.action_naviDestination_to_naviNavigating)
         }
 

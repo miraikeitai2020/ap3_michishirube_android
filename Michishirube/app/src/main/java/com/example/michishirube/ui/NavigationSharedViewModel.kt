@@ -3,8 +3,10 @@ package com.example.michishirube.ui
 import android.Manifest
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
+import android.net.Uri
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.ViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -27,7 +29,13 @@ class NavigationSharedViewModel: ViewModel() {
     //naviDestination
     var deviceLatitude = 0.0
     var deviceLongitude = 0.0
+
+    //spot何たらはgraphQlから値をとってくる
     var spotName = ""
+
+    //目的地の緯度経度（とりあえず今は未来大が入っている）
+    var spotLatitude = 41.841714
+    var spotLongitude = 140.766817
 
 
     //emotionSelect
@@ -53,11 +61,15 @@ class NavigationSharedViewModel: ViewModel() {
     fun loadDestination(){//もしかしたらここら辺はちゃんとそれらの（？）ViewModelで書くかも
         //Coroutinesを使用して，Repositryの関数を使って，目的地名を持ってくる
         //withContextでここの目的地名のテキスト（spotName）に値入れて，Fragmentの方でFragmentの方の目的地名（レイアウトと直結してる方）に値追加かな
+        //上にプラスでgraphQLから値を撮ってきてspotLatitude,spotLongitudeに目的地の緯度経度をいれる
     }
 
     //naviDestination
-    fun intentDestination(){
-        //「ここにいく」を押したら，緯度経度入れてGoogleMapに遷移するあれをしたいね〜
+    fun intentDestination(): Intent {
+        val uriStr = "https://www.google.com/maps/dir/?api=1&destination=${spotLatitude},${spotLongitude}"
+        val uri = Uri.parse(uriStr)
+        val intent = Intent(Intent.ACTION_VIEW, uri)
+        return intent
     }
 
     //naviEvaluation 2ndスプリント
