@@ -103,7 +103,10 @@
         android:label="fragment_spot_register"
         tools:layout="@layout/fragment_spot_register"
         >
-
+        <action
+            android:id="@+id/action_spotRegister_to_spotList"
+            app:destination="@+id/spotListFragment"
+            />
     </fragment>
 
 </navigation>
