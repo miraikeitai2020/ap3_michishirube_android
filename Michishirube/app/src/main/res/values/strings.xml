@@ -11,9 +11,9 @@
     <!-- NaviEmotionSelect画面 -->
     <string name="tv_emotion_select_desc">今の感情を教えてください</string>
     <string name="bt_happy">幸せ</string>
-    <string name="bt_usually">普通</string>
-    <string name="bt_anger_aversion">怒り・嫌悪</string>
-    <string name="bt_shock">ショック</string>
+    <string name="bt_usually">穏やか</string>
+    <string name="bt_anger_aversion">怒り</string>
+    <string name="bt_shock">悲しみ</string>
 
     <!-- NaviTimeSelect画面 -->
     <string name="tv_time_select_desc">所要時間を設定してください</string>
