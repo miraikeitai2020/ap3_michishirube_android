@@ -59,7 +59,7 @@
             android:layout_marginStart="16dp"
             android:background="@color/colorPrimaryDark"
             android:contentDescription="TODO"
-            android:src="@drawable/bt_navidestination_reload"
+            android:src="@drawable/bt_navidestination_update"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/ibNavigating"
             app:layout_constraintTop_toTopOf="parent"
