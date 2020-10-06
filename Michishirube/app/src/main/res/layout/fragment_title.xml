@@ -14,7 +14,7 @@
         android:layout_width="283dp"
         android:layout_height="89dp"
         android:layout_weight="4"
-        android:src="@drawable/img_title_logo"
+        android:src="@drawable/img_title_newlogo"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="24dp"
         />
