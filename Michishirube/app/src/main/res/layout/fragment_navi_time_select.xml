@@ -31,7 +31,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/ibTimeDecision"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#00000000"
@@ -42,7 +42,7 @@
             app:srcCompat="@drawable/bt_decision" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/tvTimeSelectTitle"
             style="@style/HeadingText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
