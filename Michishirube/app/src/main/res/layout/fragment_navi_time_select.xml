@@ -30,15 +30,27 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/btTimeDecision"
+        <ImageButton
+            android:id="@+id/ibTimeDecision"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bt_time_decision"
+            android:background="#00000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/timePicker" />
+            app:layout_constraintTop_toBottomOf="@+id/timePicker"
+            app:srcCompat="@drawable/bt_decision" />
+
+        <TextView
+            android:id="@+id/tvTimeSelectTitle"
+            style="@style/HeadingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_time_select_desc"
+            app:layout_constraintBottom_toTopOf="@+id/timePicker"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
