@@ -116,14 +116,19 @@ class NavigationSharedViewModel: ViewModel() {
 
     }
 
-    fun startGPS(activity: Activity, context: Context){
+
+    fun startGPS(activity: Activity){
         val locationRequest = LocationRequest.create()
             .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
             .setInterval(3000L)
+
         val builder = LocationSettingsRequest.Builder()
             .addLocationRequest(locationRequest)
+
         val client: SettingsClient = LocationServices.getSettingsClient(activity)
+
         val task: Task<LocationSettingsResponse> = client.checkLocationSettings(builder.build())
+
 
         task.addOnFailureListener { exception ->
             if (exception is ResolvableApiException){
