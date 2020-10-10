@@ -25,7 +25,7 @@ class NaviDestinationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //ここにいくボタンを押下
-        binding.btGo.setOnClickListener{
+        binding.ibGo.setOnClickListener{
             startActivity(sharedViewModel.intentDestination())
             findNavController().navigate(R.id.action_naviDestination_to_naviNavigating)
         }

@@ -53,7 +53,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/btReload"
+            android:id="@+id/ibUpdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -66,15 +66,15 @@
             app:layout_constraintVertical_bias="0.83" />
 
         <ImageButton
-            android:id="@+id/btGo"
+            android:id="@+id/ibGo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:background="@color/colorPrimaryDark"
             android:src="@drawable/bt_navidestination_go"
-            app:layout_constraintBottom_toBottomOf="@+id/btReload"
+            app:layout_constraintBottom_toBottomOf="@+id/ibUpdate"
             app:layout_constraintEnd_toEndOf="@+id/ibNavigating"
-            app:layout_constraintTop_toTopOf="@+id/btReload" />
+            app:layout_constraintTop_toTopOf="@+id/ibUpdate" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
