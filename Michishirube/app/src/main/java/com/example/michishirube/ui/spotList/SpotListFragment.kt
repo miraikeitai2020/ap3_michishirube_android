@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,6 +34,10 @@ class SpotListFragment : Fragment() {
 
         binding.fabAddSpot.setOnClickListener{
             findNavController().navigate(R.id.action_spotList_to_spotRegister)
+        }
+
+        val callback = requireActivity().onBackPressedDispatcher.addCallback(this){
+            findNavController().navigate(R.id.titleFragment)
         }
 
     }

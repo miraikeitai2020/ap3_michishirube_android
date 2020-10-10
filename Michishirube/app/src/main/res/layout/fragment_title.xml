@@ -1,45 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.title.TitleFragment">
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="com.example.michishirube.ui.NavigationSharedViewModel" />
+    </data>
 
 
-    <ImageView
-        android:id="@+id/logoMichishirube"
-        android:layout_width="283dp"
-        android:layout_height="89dp"
-        android:layout_weight="8"
-        android:src="@drawable/img_title_logo"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="24dp"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.title.TitleFragment">
 
 
-    <ImageButton
-        android:id="@+id/ibNavigation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@color/colorPrimaryDark"
-        android:src="@drawable/bt_title_navigation"
-        android:layout_gravity="center_horizontal"
-        />
-
-    <ImageButton
-        android:id="@+id/ibSpotList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:background="@color/colorPrimaryDark"
-        android:src="@drawable/bt_title_spotlist"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/logoMichishirube"
+            android:layout_width="283dp"
+            android:layout_height="89dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:layout_weight="8"
+            android:src="@drawable/img_title_logo" />
 
 
+        <ImageButton
+            android:id="@+id/ibNavigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:src="@drawable/bt_title_navigation" />
 
-</LinearLayout>
+        <ImageButton
+            android:id="@+id/ibSpotList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="32dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:src="@drawable/bt_title_spotlist" />
+
+    </LinearLayout>
+</layout>
