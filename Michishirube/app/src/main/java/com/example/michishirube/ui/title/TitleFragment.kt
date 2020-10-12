@@ -6,27 +6,39 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.core.app.ActivityCompat
 import androidx.navigation.fragment.findNavController
 import com.example.michishirube.R
-import kotlinx.android.synthetic.main.fragment_title.view.*
+import com.example.michishirube.databinding.FragmentTitleBinding
 
 class TitleFragment : Fragment() {
+    private lateinit var binding: FragmentTitleBinding
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_title, container, false)
-        //押されたら
-        view.ibNavigation.setOnClickListener {
-            findNavController().navigate(R.id.action_title_to_naviEmotionSelect)
-        }
-        view.ibSpotList.setOnClickListener {
-            findNavController().navigate(R.id.action_title_to_spotList)
-        }
-        return view
+        binding = FragmentTitleBinding.inflate(inflater, container, false)
+
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         checkRequestPermission()
+
+        //ナビゲーションボタン押下
+        binding.ibNavigation.setOnClickListener {
+            findNavController().navigate(R.id.action_title_to_naviEmotionSelect)
+        }
+
+        //スポット一覧ボタン押下
+        binding.ibSpotList.setOnClickListener {
+            findNavController().navigate(R.id.action_title_to_spotList)
+        }
+
+        //左下の戻るボタン押下したらアプリ終了
+        val callback = requireActivity().onBackPressedDispatcher.addCallback(this){
+            activity?.finish()
+        }
     }
 
     private fun checkRequestPermission(){
