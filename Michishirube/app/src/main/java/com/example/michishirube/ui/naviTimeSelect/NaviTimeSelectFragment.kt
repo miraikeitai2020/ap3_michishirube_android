@@ -38,7 +38,7 @@ class NaviTimeSelectFragment : Fragment() {
         }
 
         //決定ボタンを押下
-        binding.btTimeDecision.setOnClickListener {
+        binding.ibTimeDecision.setOnClickListener {
             //サーバとのやりとりが多分ここに入る
             findNavController().navigate(R.id.action_naviTimeSelect_to_naviDestination)
         }
