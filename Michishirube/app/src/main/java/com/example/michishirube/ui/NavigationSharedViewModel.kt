@@ -13,21 +13,20 @@ import android.util.Log
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.apollographql.apollo.ApolloClient
 import com.apollographql.apollo.coroutines.toDeferred
 import com.apollographql.apollo.exception.ApolloException
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
 import com.google.android.gms.tasks.Task
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
+import kotlin.coroutines.CoroutineContext
 
-class NavigationSharedViewModel: ViewModel() {
+class NavigationSharedViewModel: ViewModel(), CoroutineScope {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var locationCallBack: LocationCallback
 
@@ -50,6 +49,13 @@ class NavigationSharedViewModel: ViewModel() {
     //目的地の緯度経度（とりあえず今は未来大が入っている）
     var spotLatitude: Double? = 41.841714
     var spotLongitude: Double? = 140.766817
+
+    //coroutineするためのあれこれ
+    private val coroutineJob = Job()
+
+    override val coroutineContext: CoroutineContext
+        get() = Dispatchers.Main + coroutineJob
+
 
     //emotionSelect
     fun setEmotionType(selectedEmotion: Int){
@@ -74,7 +80,7 @@ class NavigationSharedViewModel: ViewModel() {
         //Coroutinesを使用して，Repositryの関数を使って，目的地名を持ってくる
         //withContextでここの目的地名のテキスト（spotName）に値入れて，Fragmentの方でFragmentの方の目的地名（レイアウトと直結してる方）に値追加かな
         //上にプラスでgraphQLから値を撮ってきてspotLatitude,spotLongitudeに目的地の緯度経度をいれる
-        CoroutineScope(Dispatchers.IO).launch {
+        viewModelScope.launch(context = Dispatchers.IO) {
             val res = try {
                 apolloClient(context).query(
                     DestinationListQuery(
@@ -203,6 +209,11 @@ class NavigationSharedViewModel: ViewModel() {
 
             return chain.proceed(request)
         }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        coroutineJob.cancel()
     }
 
 }
