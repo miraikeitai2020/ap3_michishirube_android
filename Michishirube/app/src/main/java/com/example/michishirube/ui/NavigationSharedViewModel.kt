@@ -45,7 +45,7 @@ class NavigationSharedViewModel: ViewModel() {
 
     //spot何たらはgraphQlから値をとってくる
 //    var spotName: String? = ""
-    var spotName: MutableLiveData<String> = MutableLiveData<String>("")
+    var spotName: MutableLiveData<String> = MutableLiveData<String>("読み込み中")
 
     //目的地の緯度経度（とりあえず今は未来大が入っている）
     var spotLatitude: Double? = 41.841714
