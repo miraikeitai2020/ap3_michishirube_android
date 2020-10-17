@@ -55,8 +55,6 @@ class Repository {
 //    private class AuthorizationInterceptor(val context: Context): Interceptor{
 //        override fun intercept(chain: Interceptor.Chain): Response {
 //            val request = chain.request().newBuilder()
-////                .addHeader("id","nanairoaisu")
-////                .addHeader("pass","nanachan")
 //                .addHeader("token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOiIyMDIwLTEwLTEyVDE3OjA1OjAyLjY1MDA4NDY4M1oiLCJzdWIiOiJuYW5haXNvYWlzdSJ9.Cjp90e5PJmWbqWBwXDAf2HNYdvSwEb69INNggX0tOHg")
 //                .build()
 //
