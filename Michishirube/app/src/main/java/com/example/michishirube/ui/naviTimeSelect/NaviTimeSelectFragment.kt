@@ -40,6 +40,7 @@ class NaviTimeSelectFragment : Fragment() {
         //決定ボタンを押下
         binding.ibTimeDecision.setOnClickListener {
             //サーバとのやりとりが多分ここに入る
+            sharedViewModel.loadDestination(requireContext())
             findNavController().navigate(R.id.action_naviTimeSelect_to_naviDestination)
         }
     }

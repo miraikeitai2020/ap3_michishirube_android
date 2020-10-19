@@ -1,0 +1,10 @@
+query SignIn{
+  signin{
+    value
+    errors{
+      code
+      message
+      description
+    }
+  }
+}

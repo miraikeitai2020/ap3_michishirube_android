@@ -1,0 +1,19 @@
+query DestinationList($deviceLatitude: Float!, $deviceLongitude: Float!, $worktime: Int!, $emotion: Int!){
+	spots(latitude: $deviceLatitude, longitude: $deviceLongitude, worktime: $worktime, emotion: $emotion){
+		spots{
+			id
+			name
+			image
+			description
+			locate{
+				latitude
+				longitude
+			}
+		}
+		errors{
+			code
+			message
+			description
+		}
+	}
+}
