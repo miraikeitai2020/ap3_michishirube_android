@@ -1,0 +1,10 @@
+mutation EvaluateSpot($destinationSpotId: String!, $emotion: Int!, $evaluationValue: Double!){
+    addEvaluation(spotId: $destinationSpotId, emoiton: $emotion, value: $evaluationValue){
+        status
+        errors{
+            code
+            messsage
+            description
+        }
+    }
+}
