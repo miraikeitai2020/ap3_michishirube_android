@@ -1,6 +1,7 @@
 package com.example.michishirube.ui
 
 import DestinationListQuery
+import EvaluateSpotMutation
 import android.Manifest
 import android.app.Activity
 import android.content.Context
@@ -43,7 +44,7 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
     var deviceLongitude = 0.0
 
     //spot何たらはgraphQlから値をとってくる
-    var spotId: String? = ""
+    var spotId = ""
     var spotName: MutableLiveData<String> = MutableLiveData<String>("読み込み中")
 
     //目的地の緯度経度（とりあえず今は未来大が入っている）
@@ -94,6 +95,7 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
                 Log.e("checker",ex.toString())
                 return@launch
             }
+            spotId = res?.data?.spots?.spot?.id?:return@launch
             val destinationName = res?.data?.spots?.spot?.name?:return@launch
             spotLatitude = res?.data?.spots?.spot?.locate?.latitude?:return@launch
             spotLongitude = res?.data?.spots?.spot?.locate?.longitude?:return@launch
@@ -122,20 +124,20 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
 
     //naviEvaluation 2ndスプリント
     fun postEvaluate(context: Context, status: Boolean){
-//        viewModelScope.launch(context = Dispatchers.IO) {
-//            val res = try {
-//                apolloClient(context).mutate(
-//                    EvaluateSpotMutation(
-//                        spotid = spotId,
-//                        emotion = emotion,
-//                        status = status
-//                    )
-//                ).toDeferred().await()
-//            }catch (ex: ApolloException){
-//                Log.e("checker",ex.toString())
-//                return@launch
-//            }
-//        }
+        viewModelScope.launch(context = Dispatchers.IO) {
+            val res = try {
+                apolloClient(context).mutate(
+                    EvaluateSpotMutation(
+                        destinationSpotId = spotId,
+                        emotion = emotion,
+                        status = status
+                    )
+                ).toDeferred().await()
+            }catch (ex: ApolloException){
+                Log.e("checker",ex.toString())
+                return@launch
+            }
+        }
     }
 
     //位置情報取得
