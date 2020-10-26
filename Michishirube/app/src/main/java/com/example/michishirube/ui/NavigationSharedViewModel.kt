@@ -104,9 +104,12 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
             spotLatitude = res?.data?.spots?.spot?.locate?.latitude?:return@launch
             spotLongitude = res?.data?.spots?.spot?.locate?.longitude?:return@launch
 
-            waypointLatitude = res?.data?.spots?.detour?.map { it?.locate?.latitude }?:return@launch
-            waypointLongitude = res?.data?.spots?.detour?.map { it?.locate?.longitude }?:return@launch
+            val waypointsLatitude = res?.data?.spots?.detour?.map { it?.locate?.latitude }?:return@launch
+            val waypointsLongitude = res?.data?.spots?.detour?.map { it?.locate?.longitude }?:return@launch
 
+            val waypointsRandom = (0..waypointsLatitude.size - 1).shuffled().first()
+            waypointLatitude = waypointsLatitude[waypointsRandom]
+            waypointLongitude = waypointsLongitude[waypointsRandom]
 
             withContext(Dispatchers.Main) {
                 if(destinationName == ""){
