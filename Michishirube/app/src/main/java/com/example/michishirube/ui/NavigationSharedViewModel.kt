@@ -50,6 +50,10 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
     var spotLatitude: Double? = 41.841714
     var spotLongitude: Double? = 140.766817
 
+    //経由地の緯度経度(初期値は大森公園)
+    var waypointLatitude: Double? = 41.7697087
+    var waypointLongitude: Double? = 140.7372313
+
     //coroutineするためのあれこれ
     private val coroutineJob = Job()
 
@@ -110,7 +114,7 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
 
     //naviDestination
     fun intentDestination(): Intent {
-        val uriStr = "https://www.google.com/maps/dir/?api=1&destination=${spotLatitude},${spotLongitude}"
+        val uriStr = "https://www.google.com/maps/dir/?api=1&waypoints=${waypointLatitude},${waypointLongitude}&destination=${spotLatitude},${spotLongitude}"
         val uri = Uri.parse(uriStr)
         val intent = Intent(Intent.ACTION_VIEW, uri)
         return intent
