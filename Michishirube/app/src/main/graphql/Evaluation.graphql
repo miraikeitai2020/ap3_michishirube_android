@@ -1,5 +1,5 @@
-mutation EvaluateSpot($destinationSpotId: String!, $emotion: Int!, $evaluationValue: Double!){
-    addEvaluation(spotId: $destinationSpotId, emoiton: $emotion, value: $evaluationValue){
+mutation EvaluateSpot($destinationSpotId: String!, $emotion: Int!, $status: Boolean!){
+    addEvaluation(spotId: $destinationSpotId, emoiton: $emotion, status: $status){
         status
         errors{
             code
