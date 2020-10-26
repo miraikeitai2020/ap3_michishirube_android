@@ -94,19 +94,20 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
                 Log.e("checker",ex.toString())
                 return@launch
             }
-            val destinationsName = res?.data?.spots?.spots?.map{ it?.name }?:return@launch
-            val destinationsLatitude = res?.data?.spots?.spots?.map{ it?.locate?.latitude }?:return@launch
-            val destinationsLongitude = res?.data?.spots?.spots?.map{ it?.locate?.longitude }?:return@launch
-            val destinationsId = res?.data?.spots?.spots?.map{it?.id}?:return@launch
+            val destinationName = res?.data?.spots?.spot?.name?:return@launch
+            spotLatitude = res?.data?.spots?.spot?.locate?.latitude?:return@launch
+            spotLongitude = res?.data?.spots?.spot?.locate?.longitude?:return@launch
+
+            waypointLatitude = res?.data?.spots?.detour?.map { it?.locate?.latitude }?:return@launch
+            waypointLongitude = res?.data?.spots?.detour?.map { it?.locate?.longitude }?:return@launch
 
 
             withContext(Dispatchers.Main) {
-                val spotRandom = (0..destinationsName.size - 1).shuffled().first()
-                spotName.postValue(destinationsName[spotRandom])
-                spotLatitude = destinationsLatitude[spotRandom]
-                spotLongitude = destinationsLongitude[spotRandom]
-                spotId = destinationsId[spotRandom].toString()
-
+                if(destinationName == ""){
+                    spotName.postValue("近くにスポットがありません")
+                }else{
+                    spotName.postValue(destinationName)
+                }
             }
         }
     }
