@@ -26,7 +26,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginBottom="16dp"
             android:text="@string/tv_spot"
-            android:textColor="#ffffff"
+            android:textColor="@color/colorWhite"
             app:layout_constraintBottom_toTopOf="@+id/etSpotName"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -36,81 +36,85 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:src="@drawable/img_frame"
-            app:layout_constraintBottom_toTopOf="@+id/etSpotName"
+            app:layout_constraintBottom_toTopOf="@+id/tvSpotName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/etSpotName"
-            android:layout_width="298dp"
-            android:layout_height="42dp"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="24dp"
             android:theme="@style/EditTextHint"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tvFeel"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/tvFeel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
             android:text="@string/tv_emotion"
-            android:textColor="#ffffff"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etSpotName" />
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toTopOf="@+id/spFeel"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Spinner
             android:id="@+id/spFeel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="24dp"
+            android:entries="@array/sp_emotion"
+            android:spinnerMode="dropdown"
+            android:textColor="@color/colorWhite"
+            android:theme="@style/SpinnerStyle"
             style="@style/Widget.AppCompat.Spinner.Underlined"
-            android:layout_width="298dp"
-            android:layout_height="42dp"
-            android:layout_marginTop="16dp"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
-            android:theme="@style/EditTextHint"
+            app:layout_constraintBottom_toTopOf="@+id/tvExp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvFeel" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/tvExp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
             android:text="@string/tv_explanation"
-            android:textColor="#ffffff"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spFeel" />
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toTopOf="@+id/etExp"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/etExp"
-            android:layout_width="298dp"
-            android:layout_height="42dp"
-            android:layout_marginTop="16dp"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
             android:theme="@style/EditTextHint"
+            app:layout_constraintBottom_toTopOf="@+id/ibDecision"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvExp" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageButton
             android:id="@+id/ibDecision"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
             android:background="@color/colorPrimaryDark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etExp"
             app:srcCompat="@drawable/bt_decision" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
