@@ -33,8 +33,9 @@ class NaviTimeSelectFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //TimePickerの値変更したら読み取る
-        binding.timePicker.setOnTimeChangedListener { timePicker,hour, minute ->
-            sharedViewModel.setTime(hour, minute)
+        //所要時間の倍率を80%にする
+        binding.timePicker.setOnTimeChangedListener { timePicker, hour, minute ->
+            sharedViewModel.setTime((hour*0.8).toInt(), (minute*0.8).toInt())
         }
 
         //決定ボタンを押下
