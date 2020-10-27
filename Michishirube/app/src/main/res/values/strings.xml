@@ -37,6 +37,12 @@
     <string name="tv_spot">場所名</string>
     <string name="tv_emotion">感情</string>
     <string name="tv_explanation">説明</string>
-    
+
+    <string-array name="sp_emotion">
+        <item>穏やか</item>
+        <item>幸せ</item>
+        <item>怒り</item>
+        <item>悲しみ</item>
+    </string-array>
 
 </resources>
