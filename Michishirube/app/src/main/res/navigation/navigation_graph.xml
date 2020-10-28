@@ -31,9 +31,22 @@
         >
 
         <action
-        android:id="@+id/action_naviEmotionSelect_to_naviTimeSelect"
-        app:destination="@+id/naviTimeSelectFragment"
+            android:id="@+id/action_naviEmotionSelect_to_naviEmoValueSelect"
+            app:destination="@+id/naviEmoValueSelectFragment"
         />
+    </fragment>
+
+    <fragment
+        android:id="@+id/naviEmoValueSelectFragment"
+        android:name="com.example.michishirube.ui.NaviEmoValueSelect.NaviEmoValueSelectFragment"
+        android:label="fragment_navi_emovalue_select"
+        tools:layout="@layout/fragment_navi_emo_value_select"
+        >
+
+        <action
+            android:id="@+id/action_naviEmoValueSelect_to_naviTimeSelect"
+            app:destination="@+id/naviTimeSelectFragment"
+            />
     </fragment>
 
     <fragment

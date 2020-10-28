@@ -15,6 +15,9 @@
     <string name="bt_anger_aversion">怒り</string>
     <string name="bt_shock">悲しみ</string>
 
+    <!-- NaviEmoValueSelect画面 -->
+    <string name="tv_emovalue_select_desc">選択した感情の大きさを\n教えてください</string>
+
     <!-- NaviTimeSelect画面 -->
     <string name="tv_time_select_desc">所要時間を設定してください</string>
     <string name="bt_time_decision">決定</string>

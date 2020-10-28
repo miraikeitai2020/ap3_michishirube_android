@@ -33,7 +33,7 @@ class NaviEmotionSelectFragment : Fragment() {
 
         fun emotionBtClickListener(emotion: Int) {
             sharedViewModel.setEmotionType(emotion)
-            findNavController().navigate(R.id.action_naviEmotionSelect_to_naviTimeSelect)
+            findNavController().navigate(R.id.action_naviEmotionSelect_to_naviEmoValueSelect)
         }
 
         binding.btHappy.setOnClickListener{ emotionBtClickListener(0)}
