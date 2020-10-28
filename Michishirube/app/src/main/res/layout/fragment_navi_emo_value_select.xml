@@ -14,13 +14,18 @@
             android:id="@+id/sbEmoValue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:stepSize="1.0"
+            android:value="1.0"
             android:valueFrom="0.0"
             android:valueTo="2.0"
-            android:stepSize="1.0"
+            app:labelBehavior="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:trackColorInactive="@color/colorWhite" />
 
         <ImageButton
             android:id="@+id/ibEmoValueDecision"
@@ -49,13 +54,33 @@
             android:id="@+id/tvSelectedEmotion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text=""
             android:textColor="@android:color/white"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/sbEmoValue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvEmoValueSelectTitle" />
+
+        <TextView
+            android:id="@+id/tvEmoValueMin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:text="@string/tv_emovalue_min"
+            app:layout_constraintStart_toStartOf="@+id/sbEmoValue"
+            app:layout_constraintTop_toBottomOf="@+id/sbEmoValue" />
+
+        <TextView
+            android:id="@+id/tvEmoValueMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:text="@string/tv_emovalue_max"
+            app:layout_constraintEnd_toEndOf="@+id/sbEmoValue"
+            app:layout_constraintTop_toBottomOf="@+id/sbEmoValue" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
