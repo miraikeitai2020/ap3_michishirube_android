@@ -5,6 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.NaviEmoValueSelect.NaviEmoValueSelectFragment">
 
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="sharedViewModel"
+            type="com.example.michishirube.ui.NavigationSharedViewModel" />
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
