@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.michishirube.R
 import com.example.michishirube.databinding.FragmentNaviEmoValueSelectBinding
+import com.google.android.material.slider.Slider
 
 class NaviEmoValueSelectFragment : Fragment() {
     private lateinit var binding:FragmentNaviEmoValueSelectBinding
@@ -18,7 +19,15 @@ class NaviEmoValueSelectFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.sbEmoValue.addOnSliderTouchListener(object : Slider.OnSliderTouchListener{
+            override fun onStartTrackingTouch(slider: Slider) {
+                //
+            }
 
+            override fun onStopTrackingTouch(slider: Slider) {
+                //
+            }
+        })
         binding.ibEmoValueDecision.setOnClickListener {
             findNavController().navigate(R.id.action_naviEmoValueSelect_to_naviTimeSelect)
         }
