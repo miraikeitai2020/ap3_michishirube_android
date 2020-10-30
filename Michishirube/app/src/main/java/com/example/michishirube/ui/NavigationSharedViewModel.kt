@@ -1,6 +1,7 @@
 package com.example.michishirube.ui
 
 import DestinationListQuery
+import EvaluateSpotMutation
 import android.Manifest
 import android.app.Activity
 import android.content.Context
@@ -43,7 +44,7 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
     var deviceLongitude = 0.0
 
     //spot何たらはgraphQlから値をとってくる
-//    var spotName: String? = ""
+    var spotId = ""
     var spotName: MutableLiveData<String> = MutableLiveData<String>("読み込み中")
 
     //目的地の緯度経度（とりあえず今は未来大が入っている）
@@ -98,16 +99,24 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
                 Log.e("checker",ex.toString())
                 return@launch
             }
-            val destinationsName = res?.data?.spots?.spots?.map{ it?.name }?:return@launch
-            val destinationsLatitude = res?.data?.spots?.spots?.map{ it?.locate?.latitude }?:return@launch
-            val destinationsLongitude = res?.data?.spots?.spots?.map{ it?.locate?.longitude }?:return@launch
+            spotId = res?.data?.spots?.spot?.id?:return@launch
+            val destinationName = res?.data?.spots?.spot?.name?:return@launch
+            spotLatitude = res?.data?.spots?.spot?.locate?.latitude?:return@launch
+            spotLongitude = res?.data?.spots?.spot?.locate?.longitude?:return@launch
+
+            val waypointsLatitude = res?.data?.spots?.detour?.map { it?.locate?.latitude }?:return@launch
+            val waypointsLongitude = res?.data?.spots?.detour?.map { it?.locate?.longitude }?:return@launch
+
+            val waypointsRandom = (0..waypointsLatitude.size - 1).shuffled().first()
+            waypointLatitude = waypointsLatitude[waypointsRandom]
+            waypointLongitude = waypointsLongitude[waypointsRandom]
 
             withContext(Dispatchers.Main) {
-                val spotRandom = (0..destinationsName.size - 1).shuffled().first()
-                spotName.postValue(destinationsName[spotRandom])
-                spotLatitude = destinationsLatitude[spotRandom]
-                spotLongitude = destinationsLongitude[spotRandom]
-
+                if(destinationName == ""){
+                    spotName.postValue("近くにスポットがありません")
+                }else{
+                    spotName.postValue(destinationName)
+                }
             }
         }
     }
@@ -121,8 +130,21 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
     }
 
     //naviEvaluation 2ndスプリント
-    fun postEvaluate(){//もしかしたらここら辺はちゃんとそれらの（？）ViewModelで書くかも
-        //たぶんここでコルーチン
+    fun postEvaluate(context: Context, status: Boolean){
+        viewModelScope.launch(context = Dispatchers.IO) {
+            val res = try {
+                apolloClient(context).mutate(
+                    EvaluateSpotMutation(
+                        destinationSpotId = spotId,
+                        emotion = emotion,
+                        status = status
+                    )
+                ).toDeferred().await()
+            }catch (ex: ApolloException){
+                Log.e("checker",ex.toString())
+                return@launch
+            }
+        }
     }
 
     //位置情報取得
@@ -206,8 +228,6 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
     private class AuthorizationInterceptor(val context: Context): Interceptor {
         override fun intercept(chain: Interceptor.Chain): Response {
             val request = chain.request().newBuilder()
-//                .addHeader("id","nanairoaisu")
-//                .addHeader("pass","nanachan")
                 .addHeader("token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOiIyMDIwLTEwLTEyVDE3OjA1OjAyLjY1MDA4NDY4M1oiLCJzdWIiOiJuYW5haXNvYWlzdSJ9.Cjp90e5PJmWbqWBwXDAf2HNYdvSwEb69INNggX0tOHg")
                 .build()
 

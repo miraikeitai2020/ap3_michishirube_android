@@ -7,6 +7,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@drawable/background</item>
     </style>
+
     <style name="HeadingText">
         <item name="android:textSize">25sp</item>
         <item name="android:textColor">@color/colorWhite</item>
@@ -17,8 +18,18 @@
         <item name="android:textColorSecondary">@color/colorWhite</item>
         <item name="android:textColor">@color/colorWhite</item>
     </style>
+
     <style name="EditTextHint">
         <item name="colorControlNormal">@color/colorWhite</item>
     </style>
 
+    <style name="EditTextStyle">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textColorHint">@color/colorWhite</item>
+    </style>
+
+    <style name="SpinnerStyle">
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="android:textColorSecondary">@color/colorWhite</item>
+    </style>
 </resources>
