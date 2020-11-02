@@ -69,8 +69,8 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
 
     //timeSelect
     fun setTime(selectedHour:Int, selectedMinute:Int){
-        hour = selectedHour
-        minute = selectedMinute
+        hour = (selectedHour * 0.8).toInt()
+        minute = (selectedMinute * 0.8).toInt()
         sumMinute = hour * 60 + minute
     }
 
