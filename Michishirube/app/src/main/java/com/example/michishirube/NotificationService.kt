@@ -7,6 +7,7 @@ import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationCompat.VISIBILITY_PUBLIC
 import androidx.core.app.NotificationManagerCompat
+import androidx.navigation.NavDeepLinkBuilder
 import com.example.michishirube.ui.MainActivity
 import com.example.michishirube.ui.naviEvaluation.NaviEvaluationFragment
 
@@ -27,9 +28,10 @@ class NotificationService : Service() {
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.createNotificationChannel(channel)
 
-        val intent = Intent(applicationContext, MainActivity::class.java).apply {
-        }
-        val pendingIntent: PendingIntent = PendingIntent.getActivity(applicationContext, 0, intent, 0)
+        val pendingIntent: PendingIntent = NavDeepLinkBuilder(applicationContext)
+            .setGraph(R.navigation.navigation_graph)
+            .setDestination(R.id.naviEvaluationFragment)
+            .createPendingIntent()
 
         val notification = NotificationCompat.Builder(this, id)
             .setContentTitle(getString(R.string.mtg_notification_title_destination))
@@ -37,6 +39,7 @@ class NotificationService : Service() {
             .setSmallIcon(R.drawable.icon)
             .setContentIntent(pendingIntent)
             .setAutoCancel(true)
+            .setVisibility(VISIBILITY_PUBLIC)
             .build()
 
         startForeground(1,notification)
