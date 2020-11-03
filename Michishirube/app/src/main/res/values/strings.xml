@@ -50,4 +50,13 @@
         <item>悲しみ</item>
     </string-array>
 
+    <!-- NotificationService -->
+    <string name="channel_id">notification_channel</string>
+    <string name="channel_name">未知しるべスポット到着通知</string>
+    <string name="channel_description">未知しるべが提案したスポットに到着時に通知</string>
+    <string name="mtg_notification_title_destination">目的地に到着しました</string>
+    <string name="mtg_notification_text_destination">ここをタップして評価画面へ</string>
+    <string name="mtg_notification_title_waypoint">寄り道スポットに到着しました</string>
+    <string name="mtg_notification_text_waypoint">ここをタップしてスポット詳細画面へ</string>
+
 </resources>
