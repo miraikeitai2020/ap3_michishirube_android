@@ -36,7 +36,7 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
 
     //timeSelect
     var hour = 0
-    var minute = 10
+    var minute = 1
     var sumMinute = 0//所要時間
 
     //naviDestination
@@ -69,9 +69,9 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
 
     //timeSelect
     fun setTime(selectedHour:Int, selectedMinute:Int){
-        hour = (selectedHour * 0.8).toInt()
-        minute = (selectedMinute * 0.8).toInt()
-        sumMinute = hour * 60 + minute
+        hour = selectedHour
+        minute = selectedMinute
+        sumMinute = hour * 60 + minute * 10
     }
 
     fun setDeviceLocation(latitude: Double?, longitude: Double?) {
