@@ -67,8 +67,7 @@ class SpotRegisterFragment : Fragment() {
                     resultData?.data?.also { uri ->
                         val inputStream = cr?.openInputStream(uri)
                         val image = BitmapFactory.decodeStream(inputStream)
-                        val imageView = binding.ivSpot.findViewById<ImageView>(R.id.ivSpot)
-                        imageView.setImageBitmap(image)
+                        binding.ivSpot.setImageBitmap(image)
                     }
                 } catch (e: Exception) {
                     //エラー発生時の動作(toastとか？)
