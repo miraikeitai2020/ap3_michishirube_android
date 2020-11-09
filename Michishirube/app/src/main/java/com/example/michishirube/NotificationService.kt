@@ -1,10 +1,13 @@
 package com.example.michishirube
 
+import android.Manifest
 import android.app.*
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.location.Location
 import android.os.IBinder
+import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationCompat.VISIBILITY_PUBLIC
 import androidx.core.app.NotificationManagerCompat
@@ -53,6 +56,7 @@ class NotificationService : Service() {
         val locationRequest = LocationRequest.create()
             .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
             .setInterval(3000L)
+
         return super.onStartCommand(intent, flags, startId)
     }
 
@@ -60,8 +64,22 @@ class NotificationService : Service() {
         TODO("Not yet implemented")
     }
 
+    override fun stopService(name: Intent?): Boolean {
+        return super.stopService(name)
+        stopLocationUpdates()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        stopLocationUpdates()
+        stopSelf()
+    }
+
     private fun startLocationUpdates() {
         val locationRequest = LocationRequest.create()?:return
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return
+        }
         fusedLocationClient.requestLocationUpdates(locationRequest, locationCallBack, null)
 
     }
@@ -73,7 +91,7 @@ class NotificationService : Service() {
         val id = getString(R.string.channel_id)
         val name = getString(R.string.channel_name)
         val descriptionText = getString(R.string.channel_description)
-        val importance = NotificationManager.IMPORTANCE_HIGH
+        val importance = NotificationManager.IMPORTANCE_DEFAULT
         val channel = NotificationChannel(id, name, importance)
         channel.description = descriptionText
 
@@ -96,7 +114,15 @@ class NotificationService : Service() {
             .build()
 
         startForeground(1,notification)
+
+        startLocationUpdates()
     }
 
+//    private fun checkRequestPermission(activity: Activity, context: Context){
+//        if(ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+//            val permissions = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION)
+//            ActivityCompat.requestPermissions(activity,permissions,1000)
+//        }
+//    }
 
 }
