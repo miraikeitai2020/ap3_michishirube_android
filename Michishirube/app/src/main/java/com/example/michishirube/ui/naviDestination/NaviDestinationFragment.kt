@@ -43,9 +43,6 @@ class NaviDestinationFragment : Fragment() {
 
         }
 
-//        binding.btReload.setOnClickListener {
-//            //更新ボタン
-//        }
     }
 
 
