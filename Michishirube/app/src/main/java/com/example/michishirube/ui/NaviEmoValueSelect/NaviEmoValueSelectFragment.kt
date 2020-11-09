@@ -32,7 +32,7 @@ class NaviEmoValueSelectFragment : Fragment() {
             //
         }
         binding.ibEmoValueDecision.setOnClickListener {
-            findNavController().navigate(R.id.action_naviEmoValueSelect_to_naviTimeSelect)
+            //findNavController().navigate(R.id.action_naviEmoValueSelect_to_naviTimeSelect)
         }
     }
 
