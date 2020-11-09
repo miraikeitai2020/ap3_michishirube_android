@@ -5,15 +5,11 @@ import android.app.*
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.location.Location
 import android.os.IBinder
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationCompat.VISIBILITY_PUBLIC
-import androidx.core.app.NotificationManagerCompat
 import androidx.navigation.NavDeepLinkBuilder
-import com.example.michishirube.ui.MainActivity
-import com.example.michishirube.ui.naviEvaluation.NaviEvaluationFragment
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
