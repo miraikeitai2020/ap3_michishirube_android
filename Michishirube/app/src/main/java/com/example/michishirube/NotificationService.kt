@@ -117,12 +117,4 @@ class NotificationService : Service() {
 
         startLocationUpdates()
     }
-
-//    private fun checkRequestPermission(activity: Activity, context: Context){
-//        if(ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
-//            val permissions = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION)
-//            ActivityCompat.requestPermissions(activity,permissions,1000)
-//        }
-//    }
-
 }
