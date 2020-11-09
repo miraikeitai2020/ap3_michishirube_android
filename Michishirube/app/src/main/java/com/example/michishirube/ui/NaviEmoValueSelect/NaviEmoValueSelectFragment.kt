@@ -10,8 +10,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.michishirube.R
 import com.example.michishirube.databinding.FragmentNaviEmoValueSelectBinding
 import com.example.michishirube.ui.NavigationSharedViewModel
-import com.google.android.material.slider.Slider
-import java.text.NumberFormat
 
 class NaviEmoValueSelectFragment : Fragment() {
     private val sharedViewModel: NavigationSharedViewModel by activityViewModels()
@@ -34,7 +32,7 @@ class NaviEmoValueSelectFragment : Fragment() {
             //
         }
         binding.ibEmoValueDecision.setOnClickListener {
-            findNavController().navigate(R.id.action_naviEmoValueSelect_to_naviTimeSelect)
+            //findNavController().navigate(R.id.action_naviEmoValueSelect_to_naviTimeSelect)
         }
     }
 
