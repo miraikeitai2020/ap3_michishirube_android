@@ -84,7 +84,7 @@ class NotificationService : Service() {
 
         val pendingIntent: PendingIntent = NavDeepLinkBuilder(applicationContext)
             .setGraph(R.navigation.navigation_graph)
-            .setDestination(R.id.naviEvaluationFragment)
+            .setDestination(R.id.naviDetourDetailFragment)
             .createPendingIntent()
 
         val notification = NotificationCompat.Builder(this, id)

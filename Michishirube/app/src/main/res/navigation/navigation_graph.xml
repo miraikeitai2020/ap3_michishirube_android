@@ -110,4 +110,28 @@
             />
     </fragment>
 
+    <fragment
+        android:id="@+id/naviDetourDetailFragment"
+        android:name="com.example.michishirube.ui.naviDetourDetail.naviDetourDetailFragment"
+        android:label="fragment_navi_detour_detail"
+        tools:layout="@layout/fragment_navi_detour_detail"
+        >
+        <action
+            android:id="@+id/action_naviDetourDetail_to_naviDetourEvaluation"
+            app:destination="@+id/naviDetourEvaluationFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/naviDetourEvaluationFragment"
+        android:name="com.example.michishirube.ui.naviDetourEvaluation.naviDetourEvaluationFragment"
+        android:label="fragment_navi_detour_evaluation"
+        tools:layout="@layout/fragment_navi_detour_evaluation"
+        >
+        <action
+            android:id="@+id/action_naviDetourEvaluation_to_naviNavigating"
+            app:destination="@+id/naviNavigatingFragment"
+            />
+    </fragment>
+
 </navigation>
