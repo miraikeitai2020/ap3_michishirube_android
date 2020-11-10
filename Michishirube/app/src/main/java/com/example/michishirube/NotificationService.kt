@@ -1,12 +1,9 @@
 package com.example.michishirube
 
-import android.Manifest
 import android.app.*
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.IBinder
-import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationCompat.VISIBILITY_PUBLIC
 import androidx.navigation.NavDeepLinkBuilder
@@ -25,14 +22,6 @@ class NotificationService : Service() {
     override fun onCreate() {
         super.onCreate()
         fusedLocationClient = FusedLocationProviderClient(applicationContext)
-
-
-        val pendingIntent: PendingIntent = NavDeepLinkBuilder(applicationContext)
-            .setGraph(R.navigation.navigation_graph)
-            .setDestination(R.id.naviEvaluationFragment)
-            .createPendingIntent()
-
-        startNotification()
 
     }
 
@@ -53,11 +42,13 @@ class NotificationService : Service() {
             .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
             .setInterval(3000L)
 
-        return super.onStartCommand(intent, flags, startId)
+        startNotification()
+
+        return START_STICKY
     }
 
     override fun onBind(p0: Intent?): IBinder? {
-        TODO("Not yet implemented")
+        return null
     }
 
     override fun stopService(name: Intent?): Boolean {
@@ -73,9 +64,6 @@ class NotificationService : Service() {
 
     private fun startLocationUpdates() {
         val locationRequest = LocationRequest.create()?:return
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            return
-        }
         fusedLocationClient.requestLocationUpdates(locationRequest, locationCallBack, null)
 
     }
@@ -94,7 +82,6 @@ class NotificationService : Service() {
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.createNotificationChannel(channel)
 
-
         val pendingIntent: PendingIntent = NavDeepLinkBuilder(applicationContext)
             .setGraph(R.navigation.navigation_graph)
             .setDestination(R.id.naviEvaluationFragment)
@@ -110,7 +97,6 @@ class NotificationService : Service() {
             .build()
 
         startForeground(1,notification)
-
         startLocationUpdates()
     }
 }

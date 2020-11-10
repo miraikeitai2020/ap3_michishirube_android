@@ -82,7 +82,8 @@ dependencies {
     //notificationCompat
     implementation "com.android.support:support-compat:28.0.0"
 
-
+    //google play service location
+//    implementation 'com.google.android.gms:play-services-location:17.0.0'
 }
 
 apollo {
