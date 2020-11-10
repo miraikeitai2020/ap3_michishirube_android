@@ -36,6 +36,11 @@
     <string name="tv_good">気に入った</string>
     <string name="tv_bad">気に入らなかった</string>
 
+    <!-- NaviDetour画面 -->
+    <string name="tv_detour_desc">寄り道スポットに到着しました</string>
+    <string name="tv_detourSpot">寄り道スポット名</string>
+    <string name="tv_detourSpot_desc">寄り道スポット説明</string>
+
     <!-- SpotList画面 -->
 
     <!-- SpotRegister画面 -->
