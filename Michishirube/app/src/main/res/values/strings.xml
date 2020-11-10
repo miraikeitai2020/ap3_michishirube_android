@@ -41,6 +41,9 @@
     <string name="tv_detourSpot">寄り道スポット名</string>
     <string name="tv_detourSpot_desc">寄り道スポット説明</string>
 
+    <!-- NaviDetourEvaluation画面 -->
+    <string name="tv_detourEvaluation_desc">寄り道スポットはいかがでしたか</string>
+
     <!-- SpotList画面 -->
 
     <!-- SpotRegister画面 -->
