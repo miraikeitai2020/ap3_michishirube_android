@@ -25,11 +25,11 @@ class NaviEmotionSelectFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         sharedViewModel.startGPS(requireActivity())
-        //感情ごとの数字を代入して次にいく（以下はまだ確定じゃない）
-        //幸せ　０
-        //普通　１
-        //怒り・嫌悪　２
-        //ショック　３
+        //感情ごとの数字を代入して次にいく
+        //ハッピー　０
+        //穏やか　１
+        //わくわく　２
+        //しんみり　３
 
         fun emotionBtClickListener(emotion: Int) {
             sharedViewModel.setEmotionType(emotion)
@@ -37,9 +37,9 @@ class NaviEmotionSelectFragment : Fragment() {
         }
 
         binding.btHappy.setOnClickListener{ emotionBtClickListener(0)}
-        binding.btNormally.setOnClickListener { emotionBtClickListener(1) }
-        binding.btAngerAversion.setOnClickListener { emotionBtClickListener(2) }
-        binding.btShock.setOnClickListener { emotionBtClickListener(3) }
+        binding.btCalm.setOnClickListener { emotionBtClickListener(1) }
+        binding.btExciting.setOnClickListener { emotionBtClickListener(2) }
+        binding.btSad.setOnClickListener { emotionBtClickListener(3) }
 
     }
 
