@@ -9,7 +9,7 @@
     <string name="bt_spotList">スポット一覧</string>
 
     <!-- NaviEmotionSelect画面 -->
-    <string name="tv_emotion_select_desc">今の感情を教えてください</string>
+    <string name="tv_emotion_select_desc">なりたい感情を教えてください</string>
     <string name="bt_happy">ハッピー</string>
     <string name="bt_calm">穏やか</string>
     <string name="bt_exciting">わくわく</string>
