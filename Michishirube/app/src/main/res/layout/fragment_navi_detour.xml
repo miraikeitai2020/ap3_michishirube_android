@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tvDetour_desc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvDetourTitle"
+        style="@style/HeadingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_detour_desc"
+        app:layout_constraintBottom_toTopOf="@+id/imDetourSpot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imDetourSpot"
+        android:layout_width="351dp"
+        android:layout_height="267dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvDetourSpot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetourTitle"
+        app:srcCompat="@drawable/cardview_spot" />
+
+    <TextView
+        android:id="@+id/tvDetourSpot"
+        style="@style/HeadingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_detourSpot"
+        app:layout_constraintBottom_toTopOf="@+id/tvDetourSpotDesc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imDetourSpot" />
+
+    <TextView
+        android:id="@+id/tvDetourSpotDesc"
+        android:layout_width="350dp"
+        android:layout_height="106dp"
+        android:text="@string/tv_detourSpot_desc"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toTopOf="@+id/ibEvaluation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetourSpot" />
+
+    <ImageButton
+        android:id="@+id/ibEvaluation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetourSpotDesc"
+        app:srcCompat="@drawable/bt_detourevaluation" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
