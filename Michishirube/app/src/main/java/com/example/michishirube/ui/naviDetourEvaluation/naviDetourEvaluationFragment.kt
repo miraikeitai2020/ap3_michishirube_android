@@ -13,7 +13,10 @@ import kotlinx.android.synthetic.main.fragment_navi_detour_evaluation.view.*
 class naviDetourEvaluationFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view =inflater.inflate(R.layout.fragment_navi_detour_evaluation, container, false)
-        view.imageButton3.setOnClickListener {
+        view.btGood.setOnClickListener {
+            findNavController().navigate(R.id.action_naviDetourEvaluation_to_naviNavigating)
+        }
+        view.btBad.setOnClickListener {
             findNavController().navigate(R.id.action_naviDetourEvaluation_to_naviNavigating)
         }
         return view
