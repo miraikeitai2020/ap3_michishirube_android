@@ -20,8 +20,10 @@
 
     <ImageView
         android:id="@+id/imDetourSpot"
-        android:layout_width="351dp"
+        android:layout_width="0dp"
         android:layout_height="267dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toTopOf="@+id/tvDetourSpot"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -43,10 +45,13 @@
 
     <TextView
         android:id="@+id/tvDetourSpotDesc"
-        android:layout_width="350dp"
+        android:layout_width="0dp"
         android:layout_height="106dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:text="@string/tv_detourSpot_desc"
         android:textColor="@color/colorWhite"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/ibEvaluation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
