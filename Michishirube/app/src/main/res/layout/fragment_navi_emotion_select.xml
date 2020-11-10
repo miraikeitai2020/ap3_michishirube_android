@@ -16,121 +16,111 @@
         tools:context=".ui.naviEmotionSelect.NaviEmotionSelectFragment">
 
         <TextView
-            android:id="@+id/btTxtHappy"
+            android:id="@+id/tvCalm"
+            android:text="@string/bt_calm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/bt_happy"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@+id/btHappy"
-            app:layout_constraintStart_toStartOf="@+id/btHappy"
-            app:layout_constraintTop_toBottomOf="@+id/btHappy" />
-
-        <TextView
-            android:id="@+id/btTxtAngerAversion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="90dp"
-            android:text="@string/bt_anger_aversion"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/btAngerAversion"
-            app:layout_constraintStart_toStartOf="@+id/btAngerAversion"
-            app:layout_constraintTop_toBottomOf="@+id/btAngerAversion" />
+            app:layout_constraintEnd_toEndOf="@+id/btCalm"
+            app:layout_constraintStart_toStartOf="@+id/btCalm"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tvExciting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bt_exciting"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/btExciting"
+            app:layout_constraintStart_toStartOf="@+id/btExciting"
+            app:layout_constraintTop_toBottomOf="@+id/btExciting" />
+
+        <TextView
+            android:id="@+id/tvEmotionSelectTitle"
             style="@style/HeadingText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="90dp"
             android:text="@string/tv_emotion_select_desc"
+            app:layout_constraintBottom_toTopOf="@+id/btHappy"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/btTxtNormally"
+            android:id="@+id/tvHappy"
+            android:text="@string/bt_happy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/bt_usually"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@+id/btNormally"
-            app:layout_constraintStart_toStartOf="@+id/btNormally"
-            app:layout_constraintTop_toBottomOf="@+id/btNormally" />
-
-        <ImageButton
-            android:id="@+id/btShock"
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="45dp"
-            android:layout_marginBottom="6dp"
-            android:background="@color/colorPrimaryDark"
-            android:scaleType="fitCenter"
-            android:src="@drawable/bt_naviemotionselect_sad03"
-            app:layout_constraintBottom_toTopOf="@+id/btTxtShock"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btAngerAversion"
-            app:layout_constraintTop_toBottomOf="@+id/btTxtHappy" />
-
-        <ImageButton
-            android:id="@+id/btAngerAversion"
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="45dp"
-            android:layout_marginBottom="6dp"
-            android:background="@color/colorPrimaryDark"
-            android:scaleType="fitCenter"
-            android:src="@drawable/bt_naviemotionselect_ang03"
-            app:layout_constraintBottom_toTopOf="@+id/btTxtAngerAversion"
-            app:layout_constraintEnd_toStartOf="@+id/btShock"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btTxtNormally" />
-
-        <TextView
-            android:id="@+id/btTxtShock"
-            android:layout_width="wrap_content"
-            android:layout_height="24dp"
-            android:layout_marginBottom="90dp"
-            android:text="@string/bt_shock"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/btShock"
-            app:layout_constraintStart_toStartOf="@+id/btShock"
-            app:layout_constraintTop_toBottomOf="@+id/btShock" />
+            app:layout_constraintEnd_toEndOf="@+id/btHappy"
+            app:layout_constraintStart_toStartOf="@+id/btHappy"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/btNormally"
+            android:id="@+id/btSad"
             android:layout_width="140dp"
             android:layout_height="140dp"
-            android:layout_marginTop="50dp"
             android:background="@color/colorPrimaryDark"
             android:scaleType="fitCenter"
-            android:src="@drawable/bt_naviemotionselect_calm03"
-            app:layout_constraintEnd_toStartOf="@+id/btHappy"
+            android:src="@drawable/bt_naviemotionselect_sad"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btExciting"
+            app:layout_constraintTop_toBottomOf="@+id/tvHappy" />
+
+        <ImageButton
+            android:id="@+id/btExciting"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:background="@color/colorPrimaryDark"
+            android:scaleType="fitCenter"
+            android:src="@drawable/bt_naviemotionselect_exciting"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btSad"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/tvCalm" />
+
+        <TextView
+            android:id="@+id/tvSad"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:text="@string/bt_sad"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/btSad"
+            app:layout_constraintStart_toStartOf="@+id/btSad"
+            app:layout_constraintTop_toBottomOf="@+id/btSad" />
 
         <ImageButton
             android:id="@+id/btHappy"
             android:layout_width="140dp"
             android:layout_height="140dp"
-            android:layout_marginTop="50dp"
             android:background="@color/colorPrimaryDark"
             android:scaleType="fitCenter"
-            android:src="@drawable/bt_naviemotionselect_hap03"
+            android:src="@drawable/bt_naviemotionselect_happy"
+            app:layout_constraintBottom_toTopOf="@+id/tvCalm"
+            app:layout_constraintEnd_toStartOf="@+id/btCalm"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btCalm"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:background="@color/colorPrimaryDark"
+            android:scaleType="fitCenter"
+            android:src="@drawable/bt_naviemotionselect_calm"
+            app:layout_constraintBottom_toTopOf="@+id/tvHappy"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btNormally"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintStart_toEndOf="@+id/btHappy" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
