@@ -22,7 +22,7 @@
 
     <!-- NaviTimeSelect画面 -->
     <string name="tv_time_select_desc">お出かけに使える時間を\n教えてください</string>
-    <string name="bt_time_decision">決定</string>
+    <string name="bt_decision">決定</string>
 
     <!-- NaviDestination画面 -->
     <string name="tv_destination_desc">ここに行きましょう</string>
