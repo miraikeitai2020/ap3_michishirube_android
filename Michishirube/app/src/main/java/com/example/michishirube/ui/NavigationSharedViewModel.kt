@@ -113,7 +113,7 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
 
             withContext(Dispatchers.Main) {
                 if(destinationName == ""){
-                    spotName.postValue("近くにスポットがありません")
+                    spotName.postValue("近くにスポットが\nありません")
                 }else{
                     spotName.postValue(destinationName)
                 }

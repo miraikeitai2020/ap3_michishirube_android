@@ -33,6 +33,7 @@
     <string name="tv_navigating">案内中</string>
 
     <!-- NaviEvaluation画面 -->
+    <string name="tv_destinarion_evaluation_desc">今回の旅はいかがでしたか</string>
     <string name="tv_good">気に入った</string>
     <string name="tv_bad">気に入らなかった</string>
 
@@ -40,9 +41,10 @@
     <string name="tv_detour_desc">寄り道スポットに到着しました</string>
     <string name="tv_detourSpot">寄り道スポット名</string>
     <string name="tv_detourSpot_desc">寄り道スポット説明</string>
+    <string name="bt_evaluation">評価する</string>
 
     <!-- NaviDetourEvaluation画面 -->
-    <string name="tv_detourEvaluation_desc">寄り道スポットはいかがでしたか</string>
+    <string name="tv_detour_evaluation_desc">寄り道スポットはいかがでしたか</string>
 
     <!-- SpotList画面 -->
 

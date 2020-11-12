@@ -7,6 +7,15 @@
     tools:context=".ui.naviEvaluation.NaviEvaluationFragment">
 
     <TextView
+        android:id="@+id/naviEvaluationTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_destinarion_evaluation_desc"
+        style="@style/HeadingText"
+        app:layout_constraintBottom_toTopOf="@+id/btGood"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
