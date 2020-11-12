@@ -5,8 +5,8 @@
     <string name="bt_back">←</string>
 
     <!-- Title画面 -->
-    <string name="bt_navigation">感情に沿ってナビゲーション</string>
-    <string name="bt_spotList">スポット一覧</string>
+    <string name="bt_navigation">なりたい感情にナビゲート</string>
+    <string name="bt_spotList">お気に入りスポット</string>
 
     <!-- NaviEmotionSelect画面 -->
     <string name="tv_emotion_select_desc">なりたい感情を教えてください</string>
@@ -21,13 +21,13 @@
     <string name="tv_emovalue_max">大</string>
 
     <!-- NaviTimeSelect画面 -->
-    <string name="tv_time_select_desc">所要時間を設定してください</string>
+    <string name="tv_time_select_desc">お出かけに使える時間を\n教えてください</string>
     <string name="bt_time_decision">決定</string>
 
     <!-- NaviDestination画面 -->
-    <string name="tv_destination_desc">今のあなたの感情から\n目的地を推薦します</string>
-    <string name="tv_destination">推薦地</string>
-    <string name="bt_go">ここにいく</string>
+    <string name="tv_destination_desc">ここに行きましょう</string>
+    <string name="tv_destination">提案地</string>
+    <string name="bt_go">経路案内する</string>
 
     <!-- NaviNavigating画面 -->
     <string name="tv_navigating">案内中</string>

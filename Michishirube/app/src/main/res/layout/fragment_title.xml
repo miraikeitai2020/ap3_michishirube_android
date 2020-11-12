@@ -39,19 +39,15 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
             android:layout_marginEnd="64dp"
-            android:backgroundTint="@color/colorWhite"
-            android:alpha="0.83"
-            app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.MediumComponent"
-            android:text="なりたい感情にナビゲート"
-            android:textColor="#005374"
-            android:textSize="18sp"
-            android:padding="20dp"
+            android:text="@string/bt_navigation"
+            style="@style/ButtonStyle"
             app:rippleColor="?android:attr/colorControlHighlight"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.7" />
+            app:layout_constraintVertical_bias="0.7"
+            app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.MediumComponent"/>
 
         <Button
             android:id="@+id/ibSpotList"
@@ -60,18 +56,14 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="64dp"
             android:layout_marginEnd="64dp"
-            android:alpha="0.83"
-            android:backgroundTint="@color/colorWhite"
-            android:padding="20dp"
-            android:text="お気に入りスポット"
-            android:textColor="#005374"
-            android:textSize="18sp"
+            android:text="@string/bt_spotList"
+            style="@style/ButtonStyle"
+            app:rippleColor="?android:attr/colorControlHighlight"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ibNavigation"
             app:layout_constraintVertical_bias="0.4"
-            app:rippleColor="?android:attr/colorControlHighlight"
             app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.MediumComponent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
