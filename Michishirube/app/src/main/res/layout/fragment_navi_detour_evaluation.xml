@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bt_navievaluation_good" />
+        app:srcCompat="@drawable/bt_ripple_good" />
 
     <ImageButton
         android:id="@+id/btBad"
@@ -28,7 +28,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btGood"
-        app:srcCompat="@drawable/bt_navievaluation_bad" />
+        app:srcCompat="@drawable/bt_ripple_bad" />
 
     <TextView
         android:id="@+id/tvGood"
@@ -51,18 +51,6 @@
         app:layout_constraintEnd_toEndOf="@+id/btBad"
         app:layout_constraintStart_toStartOf="@+id/btBad"
         app:layout_constraintTop_toBottomOf="@+id/btBad" />
-
-<!--    <ImageButton-->
-<!--        android:id="@+id/imageButton3"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:backgroundTint="@color/colorPrimaryDark"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/btBad"-->
-<!--        app:srcCompat="@drawable/bt_navirestart" />-->
 
     <TextView
         android:id="@+id/tvDesc"
