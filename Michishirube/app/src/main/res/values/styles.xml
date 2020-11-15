@@ -17,7 +17,7 @@
     <style name="ButtonStyle">
         <item name="android:alpha">0.83</item>
         <item name="android:backgroundTint">@color/colorWhite</item>
-        <item name="android:padding">20dp</item>
+        <item name="android:padding">8dp</item>
         <item name="android:textColor">#005374</item>
         <item name="android:textSize">18sp</item>
 
