@@ -12,7 +12,7 @@
     </data>
 
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -21,32 +21,51 @@
 
         <ImageView
             android:id="@+id/logoMichishirube"
-            android:layout_width="283dp"
-            android:layout_height="89dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="24dp"
             android:layout_weight="8"
-            android:src="@drawable/img_title_logo" />
+            android:src="@drawable/img_title_logo"
+            app:layout_constraintBottom_toTopOf="@+id/ibNavigation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-
-        <ImageButton
+        <Button
             android:id="@+id/ibNavigation"
-            android:layout_width="wrap_content"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
-            android:background="@color/colorPrimaryDark"
-            android:src="@drawable/bt_title_navigation" />
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="64dp"
+            android:text="@string/bt_navigation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.7"
+            app:rippleColor="?android:attr/colorControlHighlight"
+            app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.MediumComponent" />
 
-        <ImageButton
+        <Button
             android:id="@+id/ibSpotList"
-            android:layout_width="wrap_content"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="32dp"
-            android:layout_weight="1"
-            android:background="@color/colorPrimaryDark"
-            android:src="@drawable/bt_title_spotlist" />
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="64dp"
+            android:padding="8dp"
+            android:text="@string/bt_spotList"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ibNavigation"
+            app:layout_constraintVertical_bias="0.2"
+            app:rippleColor="?android:attr/colorControlHighlight"
+            app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.MediumComponent"
+            app:strokeColor="@color/colorWhite" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -34,7 +34,6 @@
             android:id="@+id/ivSpot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
             android:src="@drawable/img_frame"
             app:layout_constraintBottom_toTopOf="@+id/tvSpotName"
             app:layout_constraintEnd_toEndOf="parent"
@@ -59,38 +58,38 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginBottom="24dp"
             android:text="@string/tv_emotion"
             android:textColor="@color/colorWhite"
-            app:layout_constraintBottom_toTopOf="@+id/spFeel"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
             android:id="@+id/spFeel"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="24dp"
             android:entries="@array/sp_emotion"
             android:spinnerMode="dropdown"
             android:textColor="@color/colorWhite"
             android:theme="@style/SpinnerStyle"
-            style="@style/Widget.AppCompat.Spinner.Underlined"
-            app:layout_constraintBottom_toTopOf="@+id/tvExp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvFeel" />
 
         <TextView
             android:id="@+id/tvExp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="32dp"
             android:text="@string/tv_explanation"
             android:textColor="@color/colorWhite"
-            app:layout_constraintBottom_toTopOf="@+id/etExp"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spFeel" />
 
         <EditText
             android:id="@+id/etExp"
@@ -98,23 +97,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="32dp"
             android:theme="@style/EditTextHint"
-            app:layout_constraintBottom_toTopOf="@+id/ibDecision"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvExp" />
 
-        <ImageButton
+        <Button
             android:id="@+id/ibDecision"
-            android:layout_width="wrap_content"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:background="@color/colorPrimaryDark"
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="64dp"
+            android:text="@string/bt_decision"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/bt_decision" />
+            app:layout_constraintTop_toBottomOf="@+id/etExp"
+            app:rippleColor="?android:attr/colorControlHighlight"
+            app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.MediumComponent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

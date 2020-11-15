@@ -22,13 +22,11 @@
             style="@style/HeadingText"
             android:layout_width="wrap_content"
             android:layout_height="75dp"
-            android:gravity="center_horizontal"
             android:text="@string/tv_destination_desc"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/tvDesc"
-            app:layout_constraintStart_toStartOf="@+id/tvDesc"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.198" />
+            app:layout_constraintBottom_toTopOf="@+id/ibNavigating"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/ibNavigating"
@@ -48,21 +46,25 @@
             android:layout_height="wrap_content"
             android:text="@string/tv_destination"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/ibNavigating"
+            app:layout_constraintStart_toStartOf="@+id/ibNavigating"
             app:layout_constraintTop_toTopOf="parent" />
 
 
-        <ImageButton
+        <Button
             android:id="@+id/ibGo"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
-            android:src="@drawable/bt_navidestination_go"
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="64dp"
+            android:text="@string/bt_go"
+            style="@style/ButtonStyle"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ibNavigating" />
+            app:layout_constraintTop_toBottomOf="@+id/ibNavigating"
+            app:rippleColor="?android:attr/colorControlHighlight"
+            app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.MediumComponent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

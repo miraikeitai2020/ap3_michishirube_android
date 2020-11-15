@@ -5,13 +5,13 @@
     <string name="bt_back">←</string>
 
     <!-- Title画面 -->
-    <string name="bt_navigation">感情に沿ってナビゲーション</string>
-    <string name="bt_spotList">スポット一覧</string>
+    <string name="bt_navigation">なりたい感情にナビゲート</string>
+    <string name="bt_spotList">お気に入りスポット</string>
 
     <!-- NaviEmotionSelect画面 -->
     <string name="tv_emotion_select_desc">なりたい感情を教えてください</string>
     <string name="bt_happy">ハッピー</string>
-    <string name="bt_calm">穏やか</string>
+    <string name="bt_calm">おだやか</string>
     <string name="bt_exciting">わくわく</string>
     <string name="bt_sad">しんみり</string>
 
@@ -21,18 +21,19 @@
     <string name="tv_emovalue_max">大</string>
 
     <!-- NaviTimeSelect画面 -->
-    <string name="tv_time_select_desc">所要時間を設定してください</string>
-    <string name="bt_time_decision">決定</string>
+    <string name="tv_time_select_desc">お出かけに使える時間を\n教えてください</string>
+    <string name="bt_decision">決定</string>
 
     <!-- NaviDestination画面 -->
-    <string name="tv_destination_desc">今のあなたの感情から\n目的地を推薦します</string>
-    <string name="tv_destination">推薦地</string>
-    <string name="bt_go">ここにいく</string>
+    <string name="tv_destination_desc">ここに行きましょう</string>
+    <string name="tv_destination">提案地</string>
+    <string name="bt_go">経路案内する</string>
 
     <!-- NaviNavigating画面 -->
     <string name="tv_navigating">案内中</string>
 
     <!-- NaviEvaluation画面 -->
+    <string name="tv_destinarion_evaluation_desc">今回の旅はいかがでしたか</string>
     <string name="tv_good">気に入った</string>
     <string name="tv_bad">気に入らなかった</string>
 
@@ -40,9 +41,10 @@
     <string name="tv_detour_desc">寄り道スポットに到着しました</string>
     <string name="tv_detourSpot">寄り道スポット名</string>
     <string name="tv_detourSpot_desc">寄り道スポット説明</string>
+    <string name="bt_evaluation">評価する</string>
 
     <!-- NaviDetourEvaluation画面 -->
-    <string name="tv_detourEvaluation_desc">寄り道スポットはいかがでしたか</string>
+    <string name="tv_detour_evaluation_desc">寄り道スポットはいかがでしたか</string>
 
     <!-- SpotList画面 -->
 
@@ -53,7 +55,7 @@
 
     <string-array name="sp_emotion">
         <item>ハッピー</item>
-        <item>穏やか</item>
+        <item>おだやか</item>
         <item>わくわく</item>
         <item>しんみり</item>
     </string-array>

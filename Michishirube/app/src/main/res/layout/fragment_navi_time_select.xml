@@ -21,7 +21,7 @@
 
         <TimePicker
             android:id="@+id/timePicker"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/TimePickerStyle"
             android:timePickerMode="spinner"
@@ -30,16 +30,31 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
+<!--        <ImageButton-->
+<!--            android:id="@+id/ibTimeDecision"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="#00000000"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/timePicker"-->
+<!--            app:srcCompat="@drawable/bt_decision" />-->
+
+        <Button
             android:id="@+id/ibTimeDecision"
-            android:layout_width="wrap_content"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#00000000"
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="64dp"
+            android:text="@string/bt_decision"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/timePicker"
-            app:srcCompat="@drawable/bt_decision" />
+            app:rippleColor="?android:attr/colorControlHighlight"
+            app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.MediumComponent" />
 
         <TextView
             android:id="@+id/tvTimeSelectTitle"
