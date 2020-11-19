@@ -6,12 +6,11 @@ import androidx.room.Insert
 import androidx.room.Query
 
 @Dao
-interface RegistedSpotsDao {
+interface RegisteredSpotsDao {
     @Insert
-    fun insert(spot: RegistedSpotsEntity)
+    fun insert(spotsEntity: RegisteredSpotsEntity)
 
     @Query("SELECT * FROM spot")
-    fun getSpot(): LiveData<List<RegistedSpotsEntity>>
-
+    fun getSpot(): LiveData<List<RegisteredSpotsEntity>>
 
 }
