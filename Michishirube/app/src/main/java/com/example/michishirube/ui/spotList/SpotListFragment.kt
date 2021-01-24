@@ -13,7 +13,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.michishirube.R
 import com.example.michishirube.databinding.FragmentSpotListBinding
-import com.example.michishirube.models.Spot
 
 
 class SpotListFragment : Fragment() {
