@@ -11,10 +11,11 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.michishirube.R
+import com.example.michishirube.data.local.db.SpotsEntity
 import com.example.michishirube.databinding.FragmentSpotRegisterBinding
-import com.example.michishirube.models.Spot
 
 
 class SpotRegisterFragment : Fragment(), AdapterView.OnItemSelectedListener {
@@ -41,14 +42,16 @@ class SpotRegisterFragment : Fragment(), AdapterView.OnItemSelectedListener {
         binding.ibDecision.setOnClickListener {
             val name = binding.etSpotName.text.toString()
             val desc = binding.etExp.text.toString()
-            val spot = Spot(0,name,emotion,desc,0.0,0.0)
-            spotListViewModel.registerSpot(spot)
+            val spot = SpotsEntity(0,name,emotion,desc,0.0,0.0)
+            spotListViewModel.insert(spot)
             findNavController().navigate(R.id.action_spotRegister_to_spotList)
         }
 
         binding.ivSpot.setOnClickListener {
             selectImage()
         }
+
+
 
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {

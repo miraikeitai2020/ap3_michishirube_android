@@ -18,7 +18,9 @@ import com.example.michishirube.models.Spot
 
 class SpotListFragment : Fragment() {
 
-    private val spotListViewModel: SpotListViewModel by viewModels()
+    private val spotListViewModel: SpotListViewModel by viewModels{
+        SpotListViewModelFactory(this.requireContext())
+    }
     private lateinit var binding: FragmentSpotListBinding
 
     lateinit var adapter: RecyclerSpotAdapter
@@ -27,9 +29,10 @@ class SpotListFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentSpotListBinding.inflate(inflater, container, false)
 
-        binding.lvSpot.adapter = RecyclerSpotAdapter()
         val layout = LinearLayoutManager(context)
         binding.lvSpot.layoutManager = layout
+        binding.lvSpot.adapter = RecyclerSpotAdapter()
+        binding.viewModel = spotListViewModel
 
         return binding.root
     }
@@ -37,15 +40,17 @@ class SpotListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        manager = activity?.supportFragmentManager!!
+
         spotListViewModel.spotList.observe(viewLifecycleOwner, Observer {
             val adapter = binding.lvSpot.adapter as RecyclerSpotAdapter?
-            //adapter?.setSpot(it)
+            adapter?.setSpot(it)
         })
 
         binding.lifecycleOwner = this.viewLifecycleOwner
 
         binding.fabAddSpot.setOnClickListener{
-            val spot = Spot(0,"",0,"",0.0,0.0)
+//            val spot = Spot(0,"",0,"",0.0,0.0)
             findNavController().navigate(R.id.action_spotList_to_spotRegister)
         }
 

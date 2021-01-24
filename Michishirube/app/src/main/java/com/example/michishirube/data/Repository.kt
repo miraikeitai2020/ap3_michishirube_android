@@ -1,26 +1,16 @@
 package com.example.michishirube.data
 
+import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
-import com.example.michishirube.data.local.LocalDataSource
-import com.example.michishirube.models.Spot
+import com.example.michishirube.data.local.db.RegisteredSpotsDao
+import com.example.michishirube.data.local.db.SpotsEntity
 
-interface Repository{
-    suspend fun inputSpot(spot: Spot)
-    fun loadAllSpots(): LiveData<List<Spot>>
-}
+class SpotRepository(private val registeredSpotsDao: RegisteredSpotsDao){
 
-class DefaultRepository(
-    private val localDataSource: LocalDataSource
-): Repository {
+    val allSpots: LiveData<List<SpotsEntity>> = registeredSpotsDao.getAllSpots()
 
-    override suspend fun inputSpot(spot: Spot){
-        localDataSource.inputSpot(spot)
+    @WorkerThread
+    suspend fun insert(spot:SpotsEntity){
+        registeredSpotsDao.insert(spot)
     }
-
-    override fun loadAllSpots(): LiveData<List<Spot>>{
-        val localSpotList = localDataSource.loadAllSpots()
-        return localSpotList
-    }
-
-
 }
