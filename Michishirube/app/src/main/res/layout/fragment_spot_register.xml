@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.michishirube.ui.spotRegister.SpotRegisterViewModel" />
+            type="com.example.michishirube.ui.spotList.SpotListViewModel" />
     </data>
 
 
@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        tools:context=".ui.spotRegister.SpotRegisterFragment">
+        tools:context=".ui.spotList.SpotRegisterFragment">
 
         <TextView
             android:id="@+id/tvSpotName"

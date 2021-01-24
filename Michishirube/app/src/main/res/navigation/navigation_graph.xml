@@ -100,7 +100,7 @@
 
     <fragment
         android:id="@+id/spotRegisterFragment"
-        android:name="com.example.michishirube.ui.spotRegister.SpotRegisterFragment"
+        android:name="com.example.michishirube.ui.spotList.SpotRegisterFragment"
         android:label="fragment_spot_register"
         tools:layout="@layout/fragment_spot_register"
         >
