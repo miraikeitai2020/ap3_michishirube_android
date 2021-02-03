@@ -121,6 +121,10 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
         }
     }
 
+    fun resetSpotName(){
+        spotName.postValue("読み込み中")
+    }
+
     //naviDestination
     fun intentDestination(): Intent {
         val uriStr = "https://www.google.com/maps/dir/?api=1&waypoints=${waypointLatitude},${waypointLongitude}&destination=${spotLatitude},${spotLongitude}"

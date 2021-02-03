@@ -44,9 +44,12 @@ class NaviDestinationFragment : Fragment() {
             startActivity(sharedViewModel.intentDestination())
             findNavController().navigate(R.id.action_naviDestination_to_naviNavigating)
             val serviceIntent = Intent(requireActivity(), NotificationService::class.java)
+            serviceIntent.putExtra("route",0)
+            serviceIntent.putExtra("destinationLatitude",sharedViewModel.spotLatitude)
+            serviceIntent.putExtra("destinationLongitude",sharedViewModel.spotLongitude)
             activity?.startForegroundService(serviceIntent)
-
         }
+
 
     }
 
