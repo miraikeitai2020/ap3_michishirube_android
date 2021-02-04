@@ -74,11 +74,6 @@ class NotificationService : Service() {
 
     private fun startNotification(intent: Intent){
         var route = intent.getIntExtra("route",1)
-        var destinationLat = intent.getDoubleExtra("destinationLatitude",41.841714)
-        var destinationLon = intent.getDoubleExtra("destinationLongitude",140.766817)
-        var bundle = Bundle()
-        bundle.putDouble("destinationLatitude",destinationLat)
-        bundle.putDouble("destinationLongitude",destinationLon)
 
         val id = getString(R.string.channel_id)
         val name = getString(R.string.channel_name)
@@ -94,7 +89,6 @@ class NotificationService : Service() {
                 val pendingIntent: PendingIntent = NavDeepLinkBuilder(applicationContext)
                     .setGraph(R.navigation.navigation_graph)
                     .setDestination(R.id.naviDetourDetailFragment)
-                    .setArguments(bundle)
                     .createPendingIntent()
                 val notification = NotificationCompat.Builder(this, id)
                     .setContentTitle(getString(R.string.mtg_notification_title_waypoint))
@@ -110,7 +104,6 @@ class NotificationService : Service() {
                 val pendingIntent: PendingIntent = NavDeepLinkBuilder(applicationContext)
                     .setGraph(R.navigation.navigation_graph)
                     .setDestination(R.id.naviEvaluationFragment)
-                    .setArguments(bundle)
                     .createPendingIntent()
                 val notification = NotificationCompat.Builder(this, id)
                     .setContentTitle(getString(R.string.mtg_notification_title_destination))

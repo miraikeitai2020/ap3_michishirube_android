@@ -1,7 +1,9 @@
 package com.example.michishirube.ui.naviDestination
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -25,7 +27,6 @@ class NaviDestinationFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentNaviDestinationBinding.inflate(inflater, container, false)
 
-
         val destinationNameObserver = Observer<String>{newName ->
             binding.tvDesc.text = newName
         }
@@ -39,15 +40,20 @@ class NaviDestinationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         checkBackgroundPermission()
+        val dataStore: SharedPreferences? = activity?.getPreferences(Context.MODE_PRIVATE)
 
         binding.ibGo.setOnClickListener{
-            startActivity(sharedViewModel.intentDestination())
+            startActivity(sharedViewModel.intentDetour())
             findNavController().navigate(R.id.action_naviDestination_to_naviNavigating)
             val serviceIntent = Intent(requireActivity(), NotificationService::class.java)
             serviceIntent.putExtra("route",0)
-            serviceIntent.putExtra("destinationLatitude",sharedViewModel.spotLatitude)
-            serviceIntent.putExtra("destinationLongitude",sharedViewModel.spotLongitude)
             activity?.startForegroundService(serviceIntent)
+
+            with(dataStore?.edit()) {
+                this?.putFloat("spotLatitude",sharedViewModel.spotLatitude?.toFloat() ?: 35.70013272104651.toFloat())
+                this?.putFloat("spotLongitude",sharedViewModel.spotLongitude?.toFloat() ?: 139.5760456919909.toFloat())
+                this?.apply()
+            }
         }
 
 
