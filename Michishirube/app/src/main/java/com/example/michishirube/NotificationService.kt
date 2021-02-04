@@ -3,7 +3,6 @@ package com.example.michishirube
 import android.app.*
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationCompat.VISIBILITY_PUBLIC
@@ -26,7 +25,7 @@ class NotificationService : Service() {
 
     }
 
-    override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         locationCallBack = object : LocationCallback(){
             override fun onLocationResult(locationResult: LocationResult?) {
                 super.onLocationResult(locationResult)
@@ -43,7 +42,7 @@ class NotificationService : Service() {
             .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
             .setInterval(3000L)
 
-        startNotification(intent)
+        startNotification()
 
         return START_STICKY
     }
@@ -72,9 +71,7 @@ class NotificationService : Service() {
         fusedLocationClient.removeLocationUpdates(LocationCallback())
     }
 
-    private fun startNotification(intent: Intent){
-        var route = intent.getIntExtra("route",1)
-
+    private fun startNotification(){
         val id = getString(R.string.channel_id)
         val name = getString(R.string.channel_name)
         val descriptionText = getString(R.string.channel_description)
@@ -84,38 +81,22 @@ class NotificationService : Service() {
 
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.createNotificationChannel(channel)
-        when(route){
-            0 -> {
-                val pendingIntent: PendingIntent = NavDeepLinkBuilder(applicationContext)
-                    .setGraph(R.navigation.navigation_graph)
-                    .setDestination(R.id.naviDetourDetailFragment)
-                    .createPendingIntent()
-                val notification = NotificationCompat.Builder(this, id)
-                    .setContentTitle(getString(R.string.mtg_notification_title_waypoint))
-                    .setContentText(getString(R.string.mtg_notification_text_waypoint))
-                    .setSmallIcon(R.drawable.icon)
-                    .setContentIntent(pendingIntent)
-                    .setAutoCancel(true)
-                    .setVisibility(VISIBILITY_PUBLIC)
-                    .build()
-                startForeground(1,notification)
-            }
-            1 -> {
-                val pendingIntent: PendingIntent = NavDeepLinkBuilder(applicationContext)
-                    .setGraph(R.navigation.navigation_graph)
-                    .setDestination(R.id.naviEvaluationFragment)
-                    .createPendingIntent()
-                val notification = NotificationCompat.Builder(this, id)
-                    .setContentTitle(getString(R.string.mtg_notification_title_destination))
-                    .setContentText(getString(R.string.mtg_notification_text_destination))
-                    .setSmallIcon(R.drawable.icon)
-                    .setContentIntent(pendingIntent)
-                    .setAutoCancel(true)
-                    .setVisibility(VISIBILITY_PUBLIC)
-                    .build()
-                startForeground(1,notification)
-            }
-        }
+
+        val pendingIntent: PendingIntent = NavDeepLinkBuilder(applicationContext)
+            .setGraph(R.navigation.navigation_graph)
+            .setDestination(R.id.naviDetourDetailFragment)
+            .createPendingIntent()
+
+        val notification = NotificationCompat.Builder(this, id)
+            .setContentTitle(getString(R.string.mtg_notification_title_destination))
+            .setContentText(getString(R.string.mtg_notification_text_destination))
+            .setSmallIcon(R.drawable.icon)
+            .setContentIntent(pendingIntent)
+            .setAutoCancel(true)
+            .setVisibility(VISIBILITY_PUBLIC)
+            .build()
+
+        startForeground(1,notification)
         startLocationUpdates()
     }
 }
