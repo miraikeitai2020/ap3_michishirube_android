@@ -48,12 +48,12 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
     var spotName: MutableLiveData<String> = MutableLiveData<String>("読み込み中")
 
     //目的地の緯度経度（とりあえず今は未来大が入っている）
-    var spotLatitude: Double? = 41.841714
-    var spotLongitude: Double? = 140.766817
+    var spotLatitude: Double? = 35.70013272104651
+    var spotLongitude: Double? = 139.5760456919909
 
-    //経由地の緯度経度(初期値は大森公園)
-    var waypointLatitude: Double? = 41.7697087
-    var waypointLongitude: Double? = 140.7372313
+    //経由地の緯度経度(初期値は玉光神社)
+    var waypointLatitude: Double? = 35.69829569514712
+    var waypointLongitude: Double? = 139.5792952856172
 
     //coroutineするためのあれこれ
     private val coroutineJob = Job()
@@ -78,6 +78,13 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
         if(latitude != null && longitude != null){
             deviceLatitude = latitude
             deviceLongitude = longitude
+        }
+    }
+
+    fun setDestination(latitude: Double?, longitude: Double?){
+        if(latitude != null && longitude != null){
+            spotLatitude = latitude
+            spotLongitude = longitude
         }
     }
 
@@ -121,9 +128,20 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
         }
     }
 
+    fun resetSpotName(){
+        spotName.postValue("読み込み中")
+    }
+
     //naviDestination
-    fun intentDestination(): Intent {
+    fun intentDetour(): Intent {
         val uriStr = "https://www.google.com/maps/dir/?api=1&waypoints=${waypointLatitude},${waypointLongitude}&destination=${spotLatitude},${spotLongitude}"
+        val uri = Uri.parse(uriStr)
+        val intent = Intent(Intent.ACTION_VIEW, uri)
+        return intent
+    }
+
+    fun intentDestination(): Intent{
+        val uriStr = "https://www.google.com/maps/dir/?api=1&destination=${spotLatitude},${spotLongitude}"
         val uri = Uri.parse(uriStr)
         val intent = Intent(Intent.ACTION_VIEW, uri)
         return intent
