@@ -29,9 +29,9 @@ class naviDetourDetailFragment : Fragment() {
         //imDetourSpot(寄り道スポット画像)を更新
         imDetourSpot.setImageResource(R.drawable.`fun`)
         //tvDetourSpot(寄り道スポット名)を更新
-        tvDetourSpot.text = "公立はこだて未来大学"
+        tvDetourSpot.text = "玉光神社"
         //tvDetourSpot_desc(寄り道スポット説明)を更新
-        val desc = "ガラス張りの2000年に建てられた大学。景色が反射して見えるため、季節や時刻によって、異なる見え方を楽しむことができる。"
+        val desc = "井の頭公園付近にひっそりと建っている神社。秋には紅葉が綺麗です。"
         tvDetourSpotDesc.text = desc
 
         view.ibEvaluation.setOnClickListener {
