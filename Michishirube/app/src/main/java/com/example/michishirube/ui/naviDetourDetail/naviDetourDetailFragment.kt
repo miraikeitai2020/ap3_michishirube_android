@@ -27,7 +27,7 @@ class naviDetourDetailFragment : Fragment() {
         val tvDetourSpotDesc = view.findViewById<TextView>(R.id.tvDetourSpotDesc)
 
         //imDetourSpot(寄り道スポット画像)を更新
-        imDetourSpot.setImageResource(R.drawable.`fun`)
+        imDetourSpot.setImageResource(R.drawable.zinja)
         //tvDetourSpot(寄り道スポット名)を更新
         tvDetourSpot.text = "玉光神社"
         //tvDetourSpot_desc(寄り道スポット説明)を更新
