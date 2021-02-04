@@ -32,7 +32,7 @@
     <string name="tv_navigating">案内中</string>
 
     <!-- NaviEvaluation画面 -->
-    <string name="tv_destinarion_evaluation_desc">お疲れ様でした！\n今回の旅はあなたに感動をもたらしたでしょうか！</string>
+    <string name="tv_destinarion_evaluation_desc">お疲れ様でした！\n今回の旅はあなたに感動を\nもたらしたでしょうか！</string>
     <string name="tv_good">Like</string>
     <string name="tv_bad">Unlike</string>
 
