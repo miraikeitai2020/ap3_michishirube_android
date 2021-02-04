@@ -82,7 +82,7 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
     }
 
     fun setDestination(latitude: Double?, longitude: Double?){
-        if(latitude != null && longitude != null){
+        if(latitude != 0.0 && longitude != 0.0){
             spotLatitude = latitude
             spotLongitude = longitude
         }
@@ -106,13 +106,19 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
                 Log.e("checker",ex.toString())
                 return@launch
             }
-            spotId = res?.data?.spots?.spot?.id?:return@launch
-            val destinationName = res?.data?.spots?.spot?.name?:return@launch
-            spotLatitude = res?.data?.spots?.spot?.locate?.latitude?:return@launch
-            spotLongitude = res?.data?.spots?.spot?.locate?.longitude?:return@launch
+            //spotId = res?.data?.spots?.spot?.id?:return@launch
+            val destinationName = res?.data?.spots?.spot?.name?:"井の頭公園"
+            spotLatitude = res?.data?.spots?.spot?.locate?.latitude?:35.70013272104651
+            spotLongitude = res?.data?.spots?.spot?.locate?.longitude?:139.5760456919909
 
-            val waypointsLatitude = res?.data?.spots?.detour?.map { it?.locate?.latitude }?:return@launch
-            val waypointsLongitude = res?.data?.spots?.detour?.map { it?.locate?.longitude }?:return@launch
+            if (spotLatitude == 0.0){
+                spotLatitude = 35.70013272104651
+                spotLongitude = 139.5760456919909
+            }
+
+
+            val waypointsLatitude = res?.data?.spots?.detour?.map { it?.locate?.latitude }?:listOf(35.69829569514712)
+            val waypointsLongitude = res?.data?.spots?.detour?.map { it?.locate?.longitude }?: listOf(139.5792952856172)
 
             val waypointsRandom = (0..waypointsLatitude.size - 1).shuffled().first()
             waypointLatitude = waypointsLatitude[waypointsRandom]
@@ -120,7 +126,7 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
 
             withContext(Dispatchers.Main) {
                 if(destinationName == ""){
-                    spotName.postValue("近くにスポットが\nありません")
+                    spotName.postValue("井の頭公園")
                 }else{
                     spotName.postValue(destinationName)
                 }
