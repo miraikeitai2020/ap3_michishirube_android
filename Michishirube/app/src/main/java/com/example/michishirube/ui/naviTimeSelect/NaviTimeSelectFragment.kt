@@ -40,8 +40,6 @@ class NaviTimeSelectFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        sharedViewModel.resetSpotName()
         //TimePickerの値変更したら読み取る
         binding.timePicker.setOnTimeChangedListener { timePicker, hour, minute ->
             sharedViewModel.setTime(hour, minute)
