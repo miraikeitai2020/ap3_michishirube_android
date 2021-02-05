@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -26,11 +27,10 @@ class naviDetourEvaluationFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentNaviDetourEvaluationBinding.inflate(inflater, container, false)
         val dataStore: SharedPreferences? = activity?.getPreferences(Context.MODE_PRIVATE)
-        val spotLatitude = dataStore?.getFloat("spotLatitude",35.70013272104651.toFloat())
-        val spotLongitude = dataStore?.getFloat("spotLongitude",139.5760456919909.toFloat())
+        val spotLatitude = dataStore?.getFloat("spotLatitude",35.70013272104651F)
+        val spotLongitude = dataStore?.getFloat("spotLongitude",139.5760456919909F)
 
         sharedViewModel.setDestination(spotLatitude?.toDouble(), spotLongitude?.toDouble())
-
 
         val serviceIntent = Intent(requireActivity(), NotificationService::class.java)
         serviceIntent.putExtra("route",1)

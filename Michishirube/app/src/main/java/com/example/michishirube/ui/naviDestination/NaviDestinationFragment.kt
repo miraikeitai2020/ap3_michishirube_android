@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -50,8 +51,8 @@ class NaviDestinationFragment : Fragment() {
             activity?.startForegroundService(serviceIntent)
 
             with(dataStore?.edit()) {
-                this?.putFloat("spotLatitude",sharedViewModel.spotLatitude?.toFloat() ?: 35.70013272104651.toFloat())
-                this?.putFloat("spotLongitude",sharedViewModel.spotLongitude?.toFloat() ?: 139.5760456919909.toFloat())
+                this?.putFloat("spotLatitude",sharedViewModel.spotLatitude?.toFloat() ?: 35.70013272104651F)
+                this?.putFloat("spotLongitude",sharedViewModel.spotLongitude?.toFloat() ?: 139.5760456919909F)
                 this?.apply()
             }
         }
