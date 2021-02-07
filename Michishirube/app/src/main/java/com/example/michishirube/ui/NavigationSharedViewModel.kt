@@ -96,8 +96,8 @@ class NavigationSharedViewModel: ViewModel(), CoroutineScope {
             val res = try {
                 apolloClient(context).query(
                     DestinationListQuery(
-                        deviceLatitude = deviceLatitude,
-                        deviceLongitude = deviceLongitude,
+                        deviceLatitude = 41.7737839200192,
+                        deviceLongitude = 140.7264574508703,
                         worktime = sumMinute,
                         emotion = emotion
                     )
